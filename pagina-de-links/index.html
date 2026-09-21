@@ -7,7 +7,7 @@
   <meta name="description" content="Palavra, vida real e propósito. Todos os links do Felipe Rissi em um só lugar.">
   <meta property="og:title" content="Felipe Rissi | Links">
   <meta property="og:description" content="Palavra • Vida Real • Propósito">
-  <meta property="og:image" content="https://feliperissi.com.br/pagina-de-links/img/youtube.webp">
+  <meta property="og:image" content="https://feliperissi.com.br/pagina-de-links/img/felipe.webp">
   <meta name="theme-color" content="#0b0b0d">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230b0b0d'/><text x='50' y='66' text-anchor='middle' font-family='Georgia,serif' font-size='46' fill='%23c9a45c'>FR</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,15 +41,13 @@
 
     header { text-align: center; margin-bottom: 36px; }
     .avatar {
-      width: 96px; height: 96px; border-radius: 50%;
+      display: block;
+      width: 108px; height: 108px; border-radius: 50%;
       margin: 0 auto 18px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 40px; font-weight: 600; color: var(--gold);
-      border: 1.5px solid var(--gold-soft);
-      background: linear-gradient(160deg, #1a1712, #0d0c0a);
+      object-fit: cover;
+      border: 2px solid var(--gold-soft);
+      background: #0d0c0a;
       box-shadow: 0 0 0 6px rgba(201,164,92,0.06), 0 20px 40px -20px rgba(201,164,92,0.5);
-      letter-spacing: 1px;
     }
     h1 {
       font-family: 'Cormorant Garamond', serif;
@@ -137,7 +135,7 @@
 <body>
   <main>
     <header>
-      <div class="avatar" aria-hidden="true">FR</div>
+      <img class="avatar" src="/pagina-de-links/img/felipe.webp" alt="Felipe Rissi" width="400" height="400" fetchpriority="high">
       <h1>Felipe Rissi</h1>
       <p class="tagline">Palavra • Vida Real • Propósito</p>
       <a class="ig" href="https://www.instagram.com/feliperiissi/" target="_blank" rel="noopener">
