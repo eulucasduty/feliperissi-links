@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deus de Processos</title>
+<meta name="description" content="Devocional de 60 dias para quem enfrenta um término, traição, abandono ou um momento em que tudo parece ter desmoronado. Por Felipe Rissi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  /* Layout: a arte da capa e o cenario. O hero e a propria capa (pergaminho, feixe de luz, coroa) com a logo por cima. Cinzel em versaletes como o titulo da capa, Libre Baskerville como o miolo. Ouro das letras como acento; marrom da coroa nas faixas escuras. Tema unico, de proposito. */
+  :root {
+    --bg: #E9D4B8;
+    --bg-2: #F1E1C9;
+    --fg: #2A1A0C;
+    --muted: #6D5648;
+    --card: #F6E9D3;
+    --line: rgba(65, 40, 11, 0.16);
+    --gold: #D9A862;
+    --gold-deep: #8A6534;
+    --gold-light: #FECD90;
+    --night: #2A190C;
+    --night-2: #41280B;
+    --night-fg: #F6E2C4;
+    --night-muted: #CDA97C;
+    --night-line: rgba(254, 205, 144, 0.18);
+    --font-caps: "Cinzel", "Trajan Pro", "Cormorant Garamond", Georgia, serif;
+    --font-serif: "Libre Baskerville", "Baskerville", "Palatino Linotype", Georgia, serif;
+    --shadow: 0 24px 60px rgba(65, 40, 11, 0.26);
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-serif);
+    font-size: 16.5px;
+    line-height: 1.78;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  h2 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3.9vw, 2.9rem);
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+  }
+  h2.caps-title {
+    font-family: var(--font-caps);
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  h3 { font-family: var(--font-serif); font-weight: 700; font-size: 1.12rem; line-height: 1.35; }
+  p { margin: 0; }
+  strong { font-weight: 700; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  .caps {
+    font-family: var(--font-caps);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.74rem;
+    line-height: 1.5;
+  }
+  .wrap { width: min(1140px, 100%); margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+  .narrow { width: min(740px, 100%); margin-inline: auto; }
+  .section { padding-block: clamp(80px, 10vw, 136px); }
+  .eyebrow { display: flex; align-items: center; gap: 14px; color: var(--gold-deep); margin-bottom: 22px; }
+  .eyebrow::before { content: ""; height: 1px; width: 36px; background: var(--gold); }
+  .dark .eyebrow { color: var(--gold-light); }
+  .lead { font-size: 1.15rem; color: var(--muted); }
+  .dark .lead { color: var(--night-muted); }
+  .stack { display: flex; flex-direction: column; gap: 18px; }
+  .stack > p { max-width: 60ch; }
+  .intro { max-width: 62ch; }
+  .intro.center { margin-inline: auto; text-align: center; }
+  .gold-i { color: var(--gold-deep); font-style: italic; }
+  .dark .gold-i { color: var(--gold-light); }
+
+  /* Ornamento da capa: linha com losango */
+  .diamond { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--gold); margin-block: 6px 22px; }
+  .diamond::before, .diamond::after { content: ""; height: 1px; width: 84px; background: linear-gradient(90deg, transparent, var(--gold)); }
+  .diamond::after { background: linear-gradient(90deg, var(--gold), transparent); }
+  .diamond i { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+  .diamond.left { justify-content: flex-start; }
+  .diamond.left::before { display: none; }
+
+  /* Capitular, como no miolo do livro */
+  .dropcap::first-letter {
+    float: left;
+    font-family: var(--font-serif);
+    font-size: 4.3rem;
+    line-height: 0.78;
+    padding: 10px 10px 0 0;
+    color: var(--gold-deep);
+  }
+
+  /* Botoes */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 19px 34px;
+    border-radius: 3px;
+    font-family: var(--font-caps);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  }
+  .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .btn-gold {
+    background: linear-gradient(180deg, #FECD90 0%, var(--gold) 55%, #A9783A 100%);
+    color: #2A190C;
+    box-shadow: 0 14px 34px rgba(120, 80, 30, 0.42), inset 0 1px 0 rgba(255,255,255,0.45);
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(120, 80, 30, 0.5), inset 0 1px 0 rgba(255,255,255,0.45); }
+  .btn-ink { background: var(--night); color: var(--night-fg); border-color: var(--night); }
+  .btn-ink:hover { transform: translateY(-2px); background: var(--night-2); }
+  .btn-line { background: transparent; color: var(--fg); border-color: rgba(65,40,11,0.4); }
+  .btn-line:hover { border-color: var(--fg); }
+  .btn .arrow { transition: transform 0.18s ease; }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  .dark { background: var(--night); color: var(--night-fg); }
+
+  /* Topo */
+  .topbar {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: rgba(233, 212, 184, 0.9);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+  .topbar .logo { height: 36px; width: auto; }
+  .topbar .btn { padding: 11px 18px; font-size: 0.7rem; }
+
+  /* Hero: a arte da capa */
+  .hero {
+    position: relative; overflow: hidden;
+    background: #D7AD72 url("assets/hero-largo.jpg") center center / cover no-repeat;
+    min-height: min(860px, 92vh);
+    display: flex; align-items: center;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(240, 214, 170, 0.55) 0%, rgba(240, 214, 170, 0.35) 38%, rgba(240, 214, 170, 0) 60%);
+    pointer-events: none;
+  }
+  .hero .ray {
+    position: absolute; inset: -20% auto auto -6%; width: 60%; height: 150%;
+    background: linear-gradient(116deg, rgba(255,236,200,0) 24%, rgba(255,236,200,0.55) 33%, rgba(255,236,200,0) 39%, rgba(255,236,200,0.35) 45%, rgba(255,236,200,0) 51%);
+    filter: blur(8px);
+    pointer-events: none;
+  }
+  .hero .wrap {
+    position: relative; z-index: 1; width: 100%;
+    padding-block: clamp(64px, 9vw, 120px);
+  }
+  .hero .content { max-width: 580px; display: flex; flex-direction: column; gap: 20px; animation: rise 1s ease both; }
+  .hero .crown-m { display: none; }
+  @keyframes rise { from { opacity: 0.001; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .hero .caps.top { color: var(--fg); letter-spacing: 0.4em; font-weight: 500; text-align: left; }
+  .hero .logo-main { width: min(600px, 100%); height: auto; margin-block: 2px 4px; filter: drop-shadow(0 2px 0 rgba(255,236,200,0.5)); }
+  .hero h1 {
+    font-family: var(--font-caps); font-weight: 500;
+    font-size: clamp(0.98rem, 1.7vw, 1.2rem); letter-spacing: 0.22em; text-transform: uppercase;
+    line-height: 1.65; color: var(--gold-deep);
+  }
+  .hero .lead { font-size: clamp(1.08rem, 1.5vw, 1.22rem); max-width: 50ch; color: var(--fg); line-height: 1.65; }
+  .hero p.body { max-width: 56ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 8px; }
+  .hero-stats { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 14px; color: var(--fg); }
+  .hero-stats span { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-caps); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
+  .hero-stats i { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+
+  /* Faixa dos 60 dias */
+  .days { border-top: 1px solid var(--night-line); background: var(--night); color: var(--night-fg); }
+  .days .wrap { padding-block: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+  .days .caps { color: var(--night-muted); font-size: 0.68rem; white-space: nowrap; }
+  .dots { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
+  .dots i { width: 9px; height: 9px; transform: rotate(45deg); background: rgba(246, 226, 196, 0.16); }
+  .dots i.on { background: var(--gold); box-shadow: 0 0 10px rgba(217, 168, 98, 0.7); }
+  .dots i.sep { background: transparent; width: 4px; }
+  .days .end { font-style: italic; color: var(--gold-light); white-space: nowrap; }
+
+  /* A dor */
+  .pain { background: linear-gradient(180deg, var(--bg-2), var(--bg)); }
+  .pain .narrow { margin-inline: 0; }
+  .pain h2 { font-size: clamp(2rem, 4.4vw, 3.3rem); }
+  .pain-lines { display: grid; gap: 12px; margin-block: 40px 30px; padding-left: 24px; border-left: 2px solid var(--gold); }
+  .pain-lines p { font-size: clamp(1.25rem, 2.5vw, 1.65rem); line-height: 1.4; }
+  .questions { display: grid; gap: 14px; margin-block: 30px; }
+  .questions p { font-style: italic; font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 1.5; color: var(--gold-deep); }
+  .callout {
+    margin-top: 36px; padding: 32px 36px;
+    border: 1px solid var(--gold);
+    background: var(--card);
+    font-size: 1.12rem; line-height: 1.6;
+    box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px rgba(217,168,98,0.45), var(--shadow);
+    position: relative;
+  }
+  .callout .caps { position: absolute; top: -10px; left: 30px; background: var(--card); padding: 0 10px; color: var(--gold-deep); font-size: 0.64rem; }
+
+  /* Leia o primeiro dia */
+  .sample { position: relative; overflow: hidden; }
+  .sample .crown-bg {
+    position: absolute; right: -16%; top: 50%; width: min(760px, 80vw); transform: translateY(-50%);
+    opacity: 0.18; pointer-events: none;
+    mask-image: radial-gradient(closest-side, #000 50%, transparent 100%);
+    -webkit-mask-image: radial-gradient(closest-side, #000 50%, transparent 100%);
+  }
+  .sample::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(900px 600px at 15% 0%, rgba(217,168,98,0.22), transparent 60%);
+    pointer-events: none;
+  }
+  .sample .wrap { position: relative; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
+  .page-shot { display: flex; justify-content: center; position: relative; }
+  .page-shot .frame {
+    position: relative;
+    padding: 10px;
+    background: linear-gradient(160deg, #E7C27A, #8A6534 60%, #D9A862);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.55);
+    transform: rotate(-2deg);
+    width: min(400px, 100%);
+  }
+  .page-shot .frame img { width: 100%; height: auto; }
+  .page-shot .ribbon {
+    position: absolute; top: -16px; left: -16px;
+    background: var(--night-2); color: var(--gold-light);
+    border: 1px solid var(--gold);
+    padding: 10px 16px; font-size: 0.66rem;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+  }
+  .sample .meta { display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--night-muted); font-size: 0.95rem; margin-top: 6px; }
+  .sample .meta b { color: var(--night-fg); font-weight: 400; font-style: italic; }
+  .sample h2 b { font-weight: 700; }
+  .verse { font-style: italic; color: var(--gold-light); font-size: 1.08rem; }
+  .answer {
+    margin-top: 12px;
+    padding: 30px 32px;
+    border: 1px solid var(--night-line);
+    border-left: 3px solid var(--gold);
+    background: rgba(254, 205, 144, 0.05);
+    display: grid; gap: 14px;
+  }
+  .answer .caps { color: var(--gold-light); font-size: 0.68rem; }
+  .answer p { font-size: 1.1rem; line-height: 1.7; }
+  .answer p.first { font-style: italic; }
+  .answer .sig { color: var(--night-muted); font-style: italic; font-size: 0.95rem; }
+  .sample .foot { color: var(--night-muted); font-size: 0.98rem; margin-top: 8px; }
+
+  /* Autor */
+  .author .wrap { display: grid; grid-template-columns: 320px 1fr; gap: clamp(36px, 6vw, 80px); align-items: start; }
+  .portrait {
+    position: sticky; top: 96px;
+    aspect-ratio: 4 / 5; max-width: 100%;
+    background:
+      radial-gradient(260px 220px at 70% 100%, rgba(217,168,98,0.6), transparent 70%),
+      linear-gradient(170deg, var(--night-2), var(--night));
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 26px; color: var(--night-fg); overflow: hidden;
+    outline: 1px solid var(--gold); outline-offset: -10px;
+  }
+  .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .portrait .label { position: relative; z-index: 1; margin: -26px; padding: 70px 26px 24px; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(10,6,2,0.75) 45%, rgba(10,6,2,0.92) 100%); }
+  .portrait .name { font-family: var(--font-caps); font-size: 1.35rem; letter-spacing: 0.06em; color: var(--gold-light); }
+  .portrait .who { margin-top: 6px; color: var(--night-muted); font-size: 0.62rem; }
+  .signature { font-style: italic; font-size: 1.5rem; color: var(--gold-deep); margin-top: 6px; }
+
+  /* O que e: composicao do produto */
+  .what { background: var(--bg-2); }
+  .what .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
+  .kit { position: relative; width: min(520px, 100%); aspect-ratio: 1 / 1; max-width: 100%; perspective: 1600px; margin-inline: auto; }
+  .kit .glow { position: absolute; inset: 8% 0 0 0; background: radial-gradient(closest-side, rgba(254, 205, 144, 0.9), rgba(254, 205, 144, 0) 72%); filter: blur(12px); }
+  .book3d {
+    position: absolute; left: 3%; top: 5%; width: 50%;
+    aspect-ratio: 900 / 1291;
+    transform: rotateY(24deg) rotateX(2deg);
+    border-radius: 3px 10px 10px 3px;
+    box-shadow: 30px 40px 70px rgba(65, 40, 11, 0.5), -2px 0 0 rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+  .book3d img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+  .book3d::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 9%; background: linear-gradient(90deg, rgba(0,0,0,0.38), rgba(255,255,255,0.12) 45%, rgba(0,0,0,0.18)); }
+  .book3d::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(255,255,255,0.14), rgba(255,255,255,0) 35%, rgba(0,0,0,0.12) 100%); }
+  .tablet {
+    position: absolute; right: 2%; bottom: 2%; width: 58%;
+    aspect-ratio: 900 / 1291; padding: 3.6%;
+    border-radius: 7% / 5%;
+    background: linear-gradient(160deg, #2C2A28, #121110 60%, #2A2826);
+    box-shadow: 0 50px 90px rgba(65, 40, 11, 0.55), 0 0 0 1px rgba(255,255,255,0.12) inset, 0 1px 0 rgba(255,255,255,0.25) inset;
+    transform: rotate(-4deg);
+  }
+  .tablet::before { content: ""; position: absolute; top: 1.7%; left: 50%; width: 1.6%; aspect-ratio: 1; border-radius: 50%; background: #0B0B0B; box-shadow: 0 0 0 1px rgba(255,255,255,0.15); transform: translateX(-50%); }
+  .tablet .screen { position: relative; width: 100%; height: 100%; border-radius: 4% / 3%; overflow: hidden; background: #000; }
+  .tablet .screen img { width: 100%; height: 100%; object-fit: cover; }
+  .tablet .glass { position: absolute; inset: 0; background: linear-gradient(115deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0) 50%); }
+  .themes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .themes span { font-family: var(--font-caps); font-weight: 600; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 12px; border: 1px solid var(--line); background: var(--card); color: var(--muted); }
+
+  /* Como funciona cada leitura: 4 passos */
+  .steps { background: var(--bg-2); padding-top: 0; }
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 44px; }
+  .step { padding: 34px 28px; border-right: 1px solid var(--line); display: grid; gap: 10px; min-width: 0; }
+  .step:last-child { border-right: 0; }
+  .step .n { font-family: var(--font-caps); font-weight: 600; color: var(--gold-deep); font-size: 1.6rem; line-height: 1; }
+  .step h3 { font-size: 1.05rem; }
+  .step p { color: var(--muted); font-size: 0.95rem; }
+  .step.hl { background: linear-gradient(180deg, rgba(217,168,98,0.18), rgba(217,168,98,0.04)); }
+  .step.hl p { color: var(--fg); font-style: italic; }
+
+  /* Mapa da jornada (escuro) */
+  .map { position: relative; overflow: hidden; }
+  .map::before { content: ""; position: absolute; inset: 0; background: radial-gradient(1000px 500px at 50% 0%, rgba(217,168,98,0.18), transparent 65%); pointer-events: none; }
+  .map .wrap { position: relative; }
+  .map-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 48px; }
+  .j { display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 24px 24px; border: 1px solid var(--night-line); background: rgba(254,205,144,0.03); min-width: 0; transition: border-color 0.2s ease, background 0.2s ease; }
+  .j:hover { border-color: rgba(254,205,144,0.5); background: rgba(254,205,144,0.06); }
+  .j .n { font-family: var(--font-caps); font-weight: 500; font-size: 2rem; color: var(--gold-light); line-height: 1; }
+  .j .n small { display: block; font-size: 0.56rem; letter-spacing: 0.18em; color: var(--night-muted); margin-top: 8px; font-weight: 600; }
+  .j h3 { font-family: var(--font-caps); font-weight: 600; font-size: 0.86rem; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.5; color: var(--night-fg); }
+  .j p { color: var(--night-muted); font-size: 0.93rem; font-style: italic; margin-top: 8px; }
+  .map .note { margin-top: 30px; color: var(--night-muted); max-width: 64ch; margin-inline: auto; text-align: center; }
+
+  /* Para quem e */
+  .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
+  .who-card { background: var(--card); border: 1px solid var(--line); padding: 30px 28px; display: flex; flex-direction: column; gap: 12px; min-width: 0; position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .who-card::before { content: ""; position: absolute; top: 0; left: 28px; right: 28px; height: 2px; background: var(--gold); }
+  .who-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .who-card h3 { font-size: 1.12rem; }
+  .who-card .q { font-style: italic; color: var(--gold-deep); }
+  .who-card p { color: var(--muted); font-size: 0.95rem; }
+
+  /* Os 60 dias + o que constroi */
+  .sixty .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(36px, 6vw, 90px); align-items: start; }
+  .list { padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .list li { list-style: none; display: grid; grid-template-columns: 22px 1fr; gap: 4px 14px; padding: 20px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .list li i { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); grid-row: span 2; margin-top: 8px; }
+  .list li b { font-size: 1.15rem; font-weight: 700; }
+  .list li span { color: var(--muted); font-size: 0.95rem; }
+  .sixty .note { margin-top: 26px; }
+  .build { background: var(--bg-2); }
+  .build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 44px; margin-top: 48px; }
+  .b { display: grid; gap: 8px; min-width: 0; }
+  .b .mark { width: 36px; height: 2px; background: var(--gold); margin-bottom: 8px; }
+  .b h3 { font-size: 1.1rem; }
+  .b p { color: var(--muted); font-size: 0.95rem; }
+
+  /* Comunidade */
+  .community { background: linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%); position: relative; }
+  .community .intro p { color: var(--night-muted); }
+  .community .intro p.strong { color: var(--night-fg); font-size: 1.1rem; }
+  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+  .feat { border: 1px solid var(--night-line); padding: 28px 26px; background: rgba(254,205,144,0.03); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .feat h3 { font-size: 1.05rem; color: var(--night-fg); }
+  .feat p { color: var(--night-muted); font-size: 0.93rem; }
+  .feat .ico { color: var(--gold-light); width: 26px; height: 26px; }
+  .community .actions { margin-top: 44px; display: flex; justify-content: center; }
+
+  /* Oferta */
+  .offer { background: radial-gradient(900px 500px at 50% 0%, rgba(254,205,144,0.35), transparent 60%), var(--bg); }
+  .offer-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 22px; margin-top: 52px; align-items: stretch; }
+  .plan { background: var(--card); border: 1px solid var(--line); padding: 36px 34px; display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  .plan.main {
+    border-color: var(--gold); position: relative;
+    box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px rgba(217,168,98,0.45), var(--shadow);
+    display: grid; grid-template-columns: 220px 1fr; gap: 20px 36px; align-items: start;
+  }
+  .plan.main .cover { grid-row: span 4; align-self: center; }
+  .plan.main .cover img { width: 100%; height: auto; box-shadow: -14px 24px 50px rgba(65,40,11,0.4), -1px 0 0 rgba(0,0,0,0.25); border-radius: 2px 8px 8px 2px; }
+  .plan .tag { position: absolute; top: -13px; left: 34px; font-family: var(--font-caps); font-weight: 600; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; background: var(--gold); color: #2A190C; padding: 7px 14px; }
+  .plan h3 { font-size: 1.5rem; font-weight: 700; }
+  .plan .kicker { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+  .price { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .price .cur { font-size: 1.1rem; color: var(--muted); }
+  .price .val { font-family: var(--font-caps); font-size: 3.2rem; line-height: 1; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .price .once { font-family: var(--font-caps); font-weight: 600; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); margin-left: 8px; }
+  .plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; align-items: start; font-size: 0.95rem; }
+  .plan li i { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); margin-top: 9px; margin-left: 4px; }
+  .plan .cta { display: grid; gap: 10px; margin-top: auto; }
+  .plan .btn { width: 100%; }
+  .plan .fine { font-size: 0.85rem; color: var(--muted); text-align: center; }
+
+  /* Fechamento */
+  .close { position: relative; overflow: hidden; text-align: center; }
+  .close .crown-bg { position: absolute; left: 50%; bottom: -12%; width: min(820px, 120vw); transform: translateX(-50%); opacity: 0.5; pointer-events: none; }
+  .close::before { content: ""; position: absolute; inset: 0; background: radial-gradient(900px 600px at 50% 110%, rgba(217,168,98,0.45), transparent 65%); pointer-events: none; }
+  .close .narrow { position: relative; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .close .logo-end { width: min(360px, 76%); height: auto; margin-bottom: 8px; }
+  .close h2 { max-width: 22ch; font-size: clamp(2rem, 4.4vw, 3.2rem); }
+  .close p { color: var(--night-muted); max-width: 56ch; }
+  .close p.final { color: var(--night-fg); font-style: italic; font-size: 1.35rem; }
+  .close .btn { margin-top: 14px; }
+
+  /* FAQ */
+  .faq .narrow.list-faq { display: grid; margin-top: 44px; border-top: 1px solid var(--line); }
+  details { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; font-weight: 700; font-size: 1.05rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-family: var(--font-caps); font-size: 1.3rem; color: var(--gold-deep); flex: none; width: 28px; text-align: center; transition: transform 0.2s ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+  details p { color: var(--muted); padding-bottom: 22px; max-width: 62ch; font-size: 0.98rem; }
+
+  footer { border-top: 1px solid var(--line); background: var(--bg-2); }
+  footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; color: var(--muted); font-size: 0.88rem; }
+  footer img { height: 28px; width: auto; opacity: 0.85; }
+
+  @media (max-width: 1000px) {
+    .plan.main { grid-template-columns: 1fr; }
+    .plan.main .cover { grid-row: auto; width: min(240px, 70%); }
+  }
+  @media (max-width: 900px) {
+    .hero {
+      background-image:
+        radial-gradient(700px 500px at 0% 0%, rgba(254, 220, 160, 0.9), rgba(254, 220, 160, 0) 60%),
+        linear-gradient(170deg, #F2D6A5 0%, #D9AE78 55%, #B98A58 100%);
+      min-height: 0;
+    }
+    .hero::before { display: none; }
+    .hero .wrap { padding-bottom: 0; }
+    .hero .content { max-width: 100%; }
+    .hero .crown-m { display: block; width: min(560px, 100%); margin: 8px auto -6%; mix-blend-mode: multiply; }
+    .sample .wrap, .author .wrap, .what .wrap, .sixty .wrap { grid-template-columns: 1fr; }
+    .portrait { position: relative; top: auto; max-width: 320px; }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); border-bottom: 0; }
+    .step { border-bottom: 1px solid var(--line); }
+    .step:nth-child(2n) { border-right: 0; }
+    .who-grid, .build-grid, .feat-grid { grid-template-columns: repeat(2, 1fr); }
+    .map-grid, .offer-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .who-grid, .build-grid, .feat-grid, .steps-grid { grid-template-columns: 1fr; }
+    .step { border-right: 0; }
+    .plan { padding: 30px 22px; }
+    .plan .tag { left: 22px; }
+    .topbar .btn span.long { display: none; }
+    .days .end { display: none; }
+    .btn { width: 100%; }
+    .page-shot .ribbon { left: 0; }
+  }
+</style>
+</head>
+<body>
+
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="#topo" aria-label="Deus de Processos"><img class="logo" src="assets/logo-escura.png" alt="Deus de Processos"></a>
+    <a class="btn btn-gold" href="#oferta">Quero <span class="long">começar meu&nbsp;</span>recomeço</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <section class="hero">
+    <div class="ray" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="content">
+        <span class="caps top">Devocional</span>
+        <img class="logo-main" src="assets/logo-escura.png" alt="Deus de Processos" width="1637" height="780">
+        <h1>60 dias de uma conversa direta com Deus</h1>
+        <p class="lead">Para quem enfrenta um término, traição, abandono ou um momento em que tudo parece ter desmoronado.</p>
+        <p class="body">Em cada leitura, você encontra sua dor nas histórias da Bíblia. <strong>Ao final de cada parágrafo, Deus responde diretamente ao seu coração</strong>, em primeira pessoa e fundamentado na Palavra.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#oferta">Quero começar meu recomeço <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-line" href="#dia1">Ler o primeiro dia</a>
+        </div>
+        <div class="hero-stats" aria-label="Sobre o livro">
+          <span><i></i>60 dias</span>
+          <span><i></i>10 jornadas</span>
+          <span><i></i>179 páginas</span>
+          <span><i></i>Ebook por R$ 24,99</span>
+        </div>
+      </div>
+      <img class="crown-m" src="assets/coroa-transparente.png" alt="" aria-hidden="true" width="1000" height="642">
+    </div>
+  </section>
+
+  <div class="days">
+    <div class="wrap">
+      <span class="caps">Dia 1</span>
+      <div class="dots" id="dots" aria-label="Sessenta dias de leitura em dez jornadas de seis dias"></div>
+      <span class="caps">Dia 60</span>
+      <span class="end">um dia de cada vez</span>
+    </div>
+  </div>
+
+  <section class="section pain">
+    <div class="wrap">
+      <div class="narrow">
+        <span class="eyebrow caps">Talvez você se reconheça aqui</span>
+        <h2>Talvez o que mais doa seja tudo o que ficou depois.</h2>
+        <div class="pain-lines">
+          <p>Depois do término, ficou <span class="gold-i">o silêncio.</span></p>
+          <p>Depois da traição, ficaram <span class="gold-i">as perguntas.</span></p>
+          <p>Depois do abandono, ficou aquela sensação de que havia <span class="gold-i">alguma coisa errada com você.</span></p>
+        </div>
+        <div class="stack">
+          <p class="dropcap">Você tenta seguir a rotina, conversa com as pessoas, até sorri. Mas basta chegar em casa, deitar a cabeça no travesseiro ou encontrar uma lembrança para sentir tudo de novo.</p>
+          <p>E, junto da saudade, vem a dúvida:</p>
+        </div>
+        <div class="questions">
+          <p>“Por que isso aconteceu comigo?”</p>
+          <p>“Como alguém que dizia me amar conseguiu me ferir assim?”</p>
+          <p>“Deus, o que eu faço com a vida que sobrou depois disso?”</p>
+        </div>
+        <div class="stack">
+          <p>Talvez sua dor seja outra. Uma dificuldade financeira, uma promessa que parece distante, o medo do futuro ou o cansaço de continuar esperando.</p>
+        </div>
+        <div class="callout">
+          <span class="caps">Para esse lugar</span>
+          <strong>O Deus de Processos foi escrito para esse lugar:</strong> quando você precisa de direção, mas está cansado demais para saber por onde começar.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sample dark" id="dia1">
+    <img class="crown-bg" src="assets/coroa-transparente.png" alt="" aria-hidden="true">
+    <div class="wrap">
+      <div class="page-shot">
+        <div class="frame">
+          <span class="ribbon caps">Jornada 1 · Dia 1</span>
+          <img src="assets/pagina-dia1.jpg" alt="Página do dia 1 do devocional: Por que Deus permitiu que isso acontecesse comigo?" width="945" height="1359">
+        </div>
+      </div>
+      <div class="stack">
+        <span class="eyebrow caps">Leia o primeiro dia</span>
+        <h2>“Por que Deus permitiu que isso <b>acontecesse comigo?</b>”</h2>
+        <div class="meta"><span>Leitura bíblica: <b>Jó 1-2</b></span></div>
+        <p class="verse">“Bendito seja o nome do Senhor.” Jó 1:21</p>
+        <p>A leitura caminha com Jó, que perdeu os bens, os filhos e a saúde sem tempo de se preparar para uma perda antes que outra chegasse. E termina assim, no último parágrafo:</p>
+        <div class="answer">
+          <span class="caps">Deus responde</span>
+          <p class="first">Meu filho(a)... Eu sei que você quer entender por que Eu permiti que isso acontecesse. Eu sei que houve dias em que você esperou que Eu impedisse, mudasse tudo ou simplesmente não deixasse doer tanto. Mas não confunda a Minha permissão com a Minha ausência. Eu estava lá quando aconteceu.</p>
+          <p>Não pense que os melhores capítulos da sua vida ficaram para trás. Segure a Minha mão. A sua história não terminou no que aconteceu com você.</p>
+          <span class="sig">Trecho do dia 1 do devocional</span>
+        </div>
+        <p class="foot">São 60 leituras assim. Cada uma começa com uma pergunta que a dor colocou no seu coração e termina com a resposta de Deus, fundamentada na Palavra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section author">
+    <div class="wrap">
+      <div class="portrait">
+        <img src="assets/felipe-rissi.jpg" alt="Felipe Rissi" width="900" height="1200">
+        <div class="label">
+          <div class="name">Felipe Rissi</div>
+          <div class="who caps">Autor do Deus de Processos</div>
+        </div>
+      </div>
+      <div class="stack">
+        <span class="eyebrow caps">Quem escreveu</span>
+        <h2>Eu escrevi este livro quando também precisava de respostas.</h2>
+        <p>Meu nome é <strong>Felipe Rissi</strong>.</p>
+        <p>Escrevi o <strong>Deus de Processos</strong> no meu pior momento, quando enfrentei um término, uma quebra financeira e o abandono.</p>
+        <p>Havia coisas demais acontecendo ao mesmo tempo. Eu precisava lidar com o que tinha perdido, com o que estava sentindo e com um futuro que já não parecia com aquele que eu havia planejado.</p>
+        <p>Foi nesse lugar que precisei buscar a Deus e entender o que Ele tinha para mim.</p>
+        <p>Eu precisava abrir a Bíblia e encontrar direção para viver aquele dia. Precisava aprender a orar com o coração ferido. Precisava entender como continuar sem deixar que a dor decidisse quem eu me tornaria.</p>
+        <p>Foi dessa busca que este devocional nasceu.</p>
+        <p><strong>Escrevi enquanto eu mesmo precisava ser alcançado pela mensagem que estava colocando no papel.</strong></p>
+        <p>Hoje, compartilho essa jornada com você porque sei como é precisar de uma palavra que encontre exatamente aquilo que você ainda não conseguiu explicar a ninguém.</p>
+        <p class="signature">Felipe Rissi</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section what">
+    <div class="wrap">
+      <div class="kit" aria-label="O devocional Deus de Processos em formato de livro e no tablet">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="book3d"><img src="assets/capa.jpg" alt="Capa do livro Deus de Processos" width="900" height="1291"></div>
+        <div class="tablet"><div class="screen"><img src="assets/capa.jpg" alt="Capa do ebook Deus de Processos na tela do tablet" width="900" height="1291"><i class="glass" aria-hidden="true"></i></div></div>
+      </div>
+      <div class="stack">
+        <span class="eyebrow caps">O que é</span>
+        <h2>O que é o Deus de Processos?</h2>
+        <p>O <strong>Deus de Processos</strong> é um ebook devocional com <strong>60 dias de leitura, reflexão e oração</strong>, que aproxima as histórias bíblicas das dores da sua vida.</p>
+        <p>Cada leitura ajuda você a compreender o contexto bíblico, olhar para o que está vivendo e dar um próximo passo.</p>
+        <p><strong>Ao final de cada parágrafo, Deus responde diretamente ao seu coração por meio de mensagens escritas em primeira pessoa e fundamentadas na Bíblia.</strong> Um recurso de escrita para tornar a reflexão próxima e pessoal, conduzindo você de volta à Palavra.</p>
+        <p>Você lê, reconhece o que sente e encontra espaço para conversar com o Pai sobre isso.</p>
+        <div class="themes" aria-label="Temas abordados">
+          <span>Término</span><span>Abandono</span><span>Espera</span><span>Comparação</span><span>Medo</span><span>Identidade</span><span>Propósito</span><span>Recomeço</span><span>Intimidade com Deus</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section steps">
+    <div class="wrap">
+      <div class="intro center">
+        <div class="diamond" aria-hidden="true"><i></i></div>
+        <h2 class="caps-title">Como funciona cada leitura</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step"><div class="n">I</div><h3>A pergunta e a leitura bíblica</h3><p>Cada dia abre com uma pergunta que a dor coloca no coração e indica a passagem para ler.</p></div>
+        <div class="step"><div class="n">II</div><h3>A história e a sua dor</h3><p>A reflexão explica o contexto com linguagem simples e aproxima o texto daquilo que você está vivendo.</p></div>
+        <div class="step hl"><div class="n">III</div><h3>Deus responde</h3><p>No último parágrafo, uma mensagem em primeira pessoa, fundamentada na Bíblia, fala diretamente ao seu coração.</p></div>
+        <div class="step"><div class="n">IV</div><h3>A oração da jornada</h3><p>Ao final de cada jornada de seis dias, uma página reservada para a sua oração.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section map dark">
+    <div class="wrap">
+      <div class="intro center">
+        <span class="eyebrow caps" style="justify-content:center">O mapa da jornada</span>
+        <h2>Dez jornadas de seis dias. Cada dia responde a uma pergunta.</h2>
+      </div>
+      <div class="map-grid">
+        <div class="j"><div class="n">1<small>6 dias</small></div><div><h3>Quando tudo desaba</h3><p>“Por que Deus permitiu que isso acontecesse comigo?” · “Eu cansei de ser forte, Deus.”</p></div></div>
+        <div class="j"><div class="n">2<small>6 dias</small></div><div><h3>Quando o coração não consegue descansar</h3><p>“Deus, eu só queria parar de pensar nisso.” · “Deus... e se amanhã der tudo errado?”</p></div></div>
+        <div class="j"><div class="n">3<small>6 dias</small></div><div><h3>Quando o passado ainda machuca</h3><p>“Deus, eu não consigo esquecer o que fizeram comigo.” · “Deus, eu não consigo perdoar.”</p></div></div>
+        <div class="j"><div class="n">4<small>6 dias</small></div><div><h3>Quando a sua identidade é restaurada</h3><p>“Deus, e se eles estiverem certos sobre mim?” · “Chegou a hora de dar o primeiro passo.”</p></div></div>
+        <div class="j"><div class="n">5<small>6 dias</small></div><div><h3>Quando o vazio não passa</h3><p>“Deus, achei que o amor de alguém preencheria o meu coração.” · “Deus, ainda existe um lugar para mim?”</p></div></div>
+        <div class="j"><div class="n">6<small>6 dias</small></div><div><h3>Intimidade com Deus</h3><p>“Deus, por que eu não consigo ouvir a Tua voz?” · “Deus, ensina-me a orar.”</p></div></div>
+        <div class="j"><div class="n">7<small>6 dias</small></div><div><h3>Relacionamentos</h3><p>“Deus, por que o Senhor permitiu que essa pessoa saísse da minha vida?” · “Deus, ainda existe um amor verdadeiro para mim?”</p></div></div>
+        <div class="j"><div class="n">8<small>6 dias</small></div><div><h3>Quando a promessa demora</h3><p>“Deus, por que a minha vida parece parada?” · “Deus, por que o Senhor está em silêncio?”</p></div></div>
+        <div class="j"><div class="n">9<small>6 dias</small></div><div><h3>O preço do chamado</h3><p>“Deus, o que eu ainda preciso entregar?” · “Deus, e se eu tiver fugido do meu chamado?”</p></div></div>
+        <div class="j"><div class="n">10<small>6 dias</small></div><div><h3>Batalhas espirituais</h3><p>“Deus, o Senhor ainda me quer depois de tudo o que eu fiz?” · “Deus, como terminar bem a caminhada que comecei?”</p></div></div>
+      </div>
+      <p class="note">Você pode começar pela jornada que mais fala com o que está vivendo hoje. O livro foi feito para ser lido no seu ritmo.</p>
+    </div>
+  </section>
+
+  <section class="section who">
+    <div class="wrap">
+      <div class="intro center">
+        <div class="diamond" aria-hidden="true"><i></i></div>
+        <h2 class="caps-title">Para quem é essa jornada?</h2>
+      </div>
+      <div class="who-grid">
+        <article class="who-card">
+          <h3>Para quem passou por um término e perdeu também os planos que tinha</h3>
+          <p>Você sente falta da pessoa, mas também da vida que imaginou ao lado dela.</p>
+          <p>O devocional ajuda você a levar essa perda a Deus, refletir sobre sua identidade e começar a construir uma vida que não fique presa à história que terminou.</p>
+        </article>
+        <article class="who-card">
+          <h3>Para quem foi traído e começou a questionar o próprio valor</h3>
+          <p class="q">“Eu não fui suficiente? O que faltou em mim?”</p>
+          <p>As reflexões convidam você a examinar essas feridas à luz da Bíblia, sem transformar a escolha de outra pessoa em uma sentença sobre quem você é.</p>
+        </article>
+        <article class="who-card">
+          <h3>Para quem foi abandonado e tem medo de confiar novamente</h3>
+          <p>Depois de alguém ir embora, até a possibilidade de um novo começo pode assustar.</p>
+          <p>Você encontrará espaço para falar sobre rejeição, insegurança e medo, enquanto fortalece sua relação com Deus e reflete sobre os próximos passos.</p>
+        </article>
+        <article class="who-card">
+          <h3>Para quem enfrenta uma perda financeira e não sabe como recomeçar</h3>
+          <p>Quando a vida financeira desmorona, a preocupação invade o sono, as decisões e a maneira como você enxerga o futuro.</p>
+          <p>Essa jornada ajuda você a buscar direção na Palavra, rever prioridades e enfrentar um dia de cada vez.</p>
+        </article>
+        <article class="who-card">
+          <h3>Para quem está cansado de esperar</h3>
+          <p>Você vê outras pessoas vivendo aquilo que pede em oração e se pergunta quando será sua vez.</p>
+          <p>O livro convida você a olhar para a espera sem abandonar a vida que acontece hoje.</p>
+        </article>
+        <article class="who-card">
+          <h3>Para quem sente que se afastou de Deus</h3>
+          <p>A dor pode ter deixado sua oração difícil e sua Bíblia fechada.</p>
+          <p class="q">Você pode começar com sinceridade, mesmo que sua primeira conversa com o Pai seja apenas: “Eu não estou conseguindo.”</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sixty" style="padding-top:0">
+    <div class="wrap">
+      <div class="stack">
+        <span class="eyebrow caps">Os 60 dias</span>
+        <h2>O que você encontrará nos 60 dias?</h2>
+        <p class="note">O término, a traição ou o abandono podem ser o motivo pelo qual você chegou até aqui. Mas a jornada também abre espaço para as outras dores que você carrega.</p>
+      </div>
+      <ul class="list">
+        <li><i></i><b>Espera e promessa</b><span>Reflexões para os dias em que continuar confiando parece difícil.</span></li>
+        <li><i></i><b>Dor e comparação</b><span>Um convite para cuidar do que sente sem medir sua história pela vida dos outros.</span></li>
+        <li><i></i><b>Coragem e fé</b><span>Encorajamento para enfrentar decisões e dar passos depois de uma decepção.</span></li>
+        <li><i></i><b>Identidade</b><span>Leituras que ajudam você a refletir sobre seu valor diante de Deus.</span></li>
+        <li><i></i><b>Propósito</b><span>Perguntas para reorganizar prioridades e encontrar sentido nos dias comuns.</span></li>
+        <li><i></i><b>Intimidade com Deus</b><span>Oportunidades para voltar à oração, à Palavra e a uma conversa sincera com o Pai.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section build">
+    <div class="wrap">
+      <div class="intro center">
+        <div class="diamond" aria-hidden="true"><i></i></div>
+        <h2 class="caps-title">O que esse devocional ajuda você a construir</h2>
+      </div>
+      <div class="build-grid">
+        <div class="b"><div class="mark"></div><h3>Um momento de acolhimento no seu dia</h3><p>Um espaço para parar de esconder o que sente e apresentar sua dor a Deus.</p></div>
+        <div class="b"><div class="mark"></div><h3>Mais clareza para compreender sua caminhada</h3><p>Reflexões que ajudam você a olhar para suas perguntas à luz da Bíblia.</p></div>
+        <div class="b"><div class="mark"></div><h3>Uma relação mais sincera com o Pai</h3><p>Você não precisa preparar palavras bonitas para começar a orar.</p></div>
+        <div class="b"><div class="mark"></div><h3>Constância, mesmo nos dias difíceis</h3><p>Uma sequência diária para ajudar você a retomar o hábito de ler, refletir e conversar com Deus.</p></div>
+        <div class="b"><div class="mark"></div><h3>Um novo olhar sobre sua identidade</h3><p>Um convite para reconhecer como a rejeição, a comparação e as perdas têm influenciado a maneira como você se vê.</p></div>
+        <div class="b"><div class="mark"></div><h3>Pequenos passos para recomeçar</h3><p>Aplicações para levar a reflexão às suas escolhas, seus relacionamentos e sua rotina.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section community dark" id="comunidade">
+    <div class="wrap">
+      <div class="intro center stack">
+        <span class="eyebrow caps" style="justify-content:center">Conheça a comunidade PROCESSO</span>
+        <h2>Você pode ter companhia enquanto aprende a recomeçar.</h2>
+        <p>Há dias em que você lê uma mensagem e encontra força para continuar. Em outros, precisa conversar, fazer uma pergunta, pedir oração e ouvir alguém explicar como a Palavra se relaciona com aquilo que você está vivendo.</p>
+        <p>A <strong style="color:var(--night-fg)">PROCESSO</strong> é a comunidade para aprofundarmos essa caminhada juntos. Vamos ler o devocional com você, explicar as passagens bíblicas e refletir sobre temas como término, traição, abandono, espera, perdão, identidade e recomeço.</p>
+        <p class="strong">Um espaço para quem quer se aproximar de Deus e precisa de apoio para manter essa decisão no dia a dia.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5V5.5"/></svg>
+          <h3>Leitura do devocional juntos</h3>
+          <p>Vamos caminhar pelas reflexões do Deus de Processos, ajudando você a compreender as mensagens e a relacioná-las com sua vida. Você terá companhia para aprofundar a leitura e continuar a jornada.</p>
+        </div>
+        <div class="feat">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg>
+          <h3>Explicações à luz da Bíblia</h3>
+          <p>Vamos conversar sobre o que você está passando, buscando nas Escrituras princípios para compreender suas emoções, suas escolhas e seus próximos passos. Para quando a dor traz muitas perguntas e você precisa de uma direção fundamentada na Palavra.</p>
+        </div>
+        <div class="feat">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          <h3>Ajuda para fazer seu devocional</h3>
+          <p>Você quer buscar a Deus, mas não sabe como começar ou tem dificuldade de manter a constância? Vamos ajudar você a construir esse momento de leitura, reflexão e oração na sua rotina.</p>
+        </div>
+        <div class="feat">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.5-4 3-6 6.5-6s6 2 6.5 6"/><path d="M15.5 14.5c3 0 5.3 1.7 6 5.5"/></svg>
+          <h3>Reuniões para aprofundar a caminhada</h3>
+          <p>Teremos encontros para conversar sobre as dores e os desafios do processo, estudar a Palavra e fortalecer nossa fé juntos. Um tempo reservado para cuidar daquilo que a correria costuma deixar para depois.</p>
+        </div>
+        <div class="feat">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg>
+          <h3>Conselhos fundamentados na Palavra</h3>
+          <p>Um espaço para buscar orientação e refletir sobre atitudes, limites, relacionamentos e decisões. Porque recomeçar também envolve aprender a fazer escolhas enquanto o coração ainda está se recuperando.</p>
+        </div>
+        <div class="feat">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"/></svg>
+          <h3>Oração em comunidade</h3>
+          <p>Você poderá compartilhar seus pedidos e participar de momentos de oração. Nos dias em que faltarem palavras, haverá um lugar para pedir: “Orem comigo.”</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-gold" href="#oferta">Quero caminhar com a PROCESSO <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section offer" id="oferta">
+    <div class="wrap">
+      <div class="intro center">
+        <div class="diamond" aria-hidden="true"><i></i></div>
+        <h2 class="caps-title">Escolha como deseja começar</h2>
+      </div>
+      <div class="offer-grid">
+        <div class="plan main">
+          <span class="tag">O devocional</span>
+          <div class="cover"><img src="assets/capa.jpg" alt="Capa do ebook Deus de Processos" width="900" height="1291"></div>
+          <div>
+            <h3>Ebook Deus de Processos</h3>
+            <p class="kicker">Sua jornada pessoal de 60 dias</p>
+          </div>
+          <div class="price"><span class="cur">R$</span><span class="val">24,99</span></div>
+          <ul>
+            <li><i></i><span>Leituras e reflexões bíblicas.</span></li>
+            <li><i></i><span>Aplicações para as dores da vida real.</span></li>
+            <li><i></i><span>Mensagens em primeira pessoa ao final de cada parágrafo.</span></li>
+            <li><i></i><span>Orações para acompanhar sua caminhada.</span></li>
+            <li><i></i><span>Reflexões sobre espera, identidade, propósito, intimidade e recomeço.</span></li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-gold" id="cta-ebook" href="#">Quero meu devocional por R$ 24,99</a>
+            <p class="fine">Ebook em formato digital, 179 páginas. Acesso imediato após a compra.</p>
+          </div>
+        </div>
+        <div class="plan">
+          <div>
+            <h3>Comunidade PROCESSO</h3>
+            <p class="kicker">Aprofunde sua caminhada com companhia</p>
+          </div>
+          <div class="price"><span class="cur">R$</span><span class="val">9,99</span><span class="once">Valor único</span></div>
+          <ul>
+            <li><i></i><span>Leitura do devocional juntos.</span></li>
+            <li><i></i><span>Explicações fundamentadas na Bíblia.</span></li>
+            <li><i></i><span>Ajuda para construir seu momento devocional.</span></li>
+            <li><i></i><span>Reuniões.</span></li>
+            <li><i></i><span>Conselhos.</span></li>
+            <li><i></i><span>Oração em comunidade.</span></li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-ink" id="cta-comunidade" href="#">Quero participar da PROCESSO</a>
+            <p class="fine">Pagamento único. Sem mensalidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section close dark">
+    <img class="crown-bg" src="assets/coroa-transparente.png" alt="" aria-hidden="true">
+    <div class="wrap narrow">
+      <img class="logo-end" src="assets/logo-clara.png" alt="" aria-hidden="true" width="1637" height="780">
+      <div class="diamond" aria-hidden="true"><i></i></div>
+      <h2>A história terminou. Você ainda tem uma vida para cuidar.</h2>
+      <p>Talvez você tenha passado os últimos dias tentando entender por que alguém foi embora. Talvez tenha procurado uma explicação nas conversas antigas, nas lembranças ou naquilo que acredita que poderia ter feito diferente.</p>
+      <p>E talvez, no meio dessa busca, tenha deixado de cuidar de você.</p>
+      <p>Hoje, você pode separar um momento para voltar à Palavra, apresentar suas perguntas a Deus e começar a olhar para o próximo passo. Não precisa resolver toda a sua vida hoje.</p>
+      <p class="final">Comece com uma leitura. Uma oração sincera. Um dia de cada vez.</p>
+      <a class="btn btn-gold" href="#oferta">Quero começar essa jornada <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="wrap">
+      <div class="narrow">
+        <span class="eyebrow caps">Dúvidas</span>
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="narrow list-faq">
+        <details open>
+          <summary>O livro é apenas para quem passou por um término?</summary>
+          <p>Não. Ele também aborda abandono, espera, comparação, medo, dificuldades, identidade, propósito e intimidade com Deus. Quem viveu um término encontrará reflexões próximas dessa dor, mas a jornada acolhe outros momentos difíceis.</p>
+        </details>
+        <details>
+          <summary>Fui traído. Esse devocional pode me ajudar?</summary>
+          <p>O livro oferece reflexões bíblicas para você levar essa dor a Deus, examinar as perguntas que ficaram e cuidar da sua caminhada. Você também poderá aprofundar esses temas na comunidade PROCESSO.</p>
+        </details>
+        <details>
+          <summary>O que significa “Deus responde ao final de cada parágrafo”?</summary>
+          <p>São mensagens escritas em primeira pessoa, fundamentadas na Bíblia, para aproximar a reflexão do seu coração. Esse recurso convida você a meditar na Palavra e conversar com Deus sobre o que leu.</p>
+        </details>
+        <details>
+          <summary>Preciso ter conhecimento da Bíblia?</summary>
+          <p>Não. A linguagem é simples e as reflexões ajudam você a compreender as histórias e suas aplicações.</p>
+        </details>
+        <details>
+          <summary>Como funciona a leitura?</summary>
+          <p>A proposta é uma leitura por dia, durante 60 dias, com tempo para refletir e orar. São dez jornadas de seis dias, e você pode começar pela que mais fala com o seu momento. Respeite seu ritmo e retome quando precisar.</p>
+        </details>
+        <details>
+          <summary>O livro é físico ou digital?</summary>
+          <p>Esta oferta é do ebook Deus de Processos, em formato digital, por R$ 24,99.</p>
+        </details>
+        <details>
+          <summary>O que é a comunidade PROCESSO?</summary>
+          <p>É o espaço onde vamos ler o devocional juntos, explicar as passagens bíblicas, fazer reuniões, compartilhar conselhos fundamentados na Palavra e orar uns pelos outros. A participação tem valor único de R$ 9,99.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-escura.png" alt="Deus de Processos">
+    <span>Felipe Rissi · Ebook devocional de 60 dias · 1ª edição, 2026</span>
+  </div>
+</footer>
+
+<script>
+  // Links de compra: troque os dois valores abaixo pelos links do checkout.
+  var LINKS = {
+    ebook: 'https://app.ephra.io/checkout/v2/izv1zkf',
+    comunidade: '#oferta'
+  };
+  document.getElementById('cta-ebook').href = LINKS.ebook;
+  document.getElementById('cta-comunidade').href = LINKS.comunidade;
+
+  // Faixa dos 60 dias: dez jornadas de seis dias
+  var dots = document.getElementById('dots');
+  var frag = document.createDocumentFragment();
+  for (var i = 1; i <= 60; i++) {
+    var d = document.createElement('i');
+    if (i <= 6) d.className = 'on';
+    frag.appendChild(d);
+    if (i % 6 === 0 && i < 60) { var s = document.createElement('i'); s.className = 'sep'; frag.appendChild(s); }
+  }
+  dots.appendChild(frag);
+</script>
+
+</body>
+</html>
