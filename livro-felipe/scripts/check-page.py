@@ -21,7 +21,7 @@ with sync_playwright() as p:
         page.evaluate('document.fonts.ready')
         page.evaluate('document.querySelectorAll("img").forEach(img => img.loading = "eager")')
         page.locator('footer').scroll_into_view_if_needed()
-        page.wait_for_function('Array.from(document.images).every(img => img.complete && img.naturalWidth > 0)')
+        page.wait_for_function('Array.from(document.images).filter(img => img.hasAttribute("src")).every(img => img.complete && img.naturalWidth > 0)')
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), f'Horizontal overflow at {width}'
         assert page.locator('h1').evaluate('(el) => el.scrollWidth <= el.clientWidth'), f'Heading overflow at {width}'
         background = page.locator('.hero-background img').evaluate('(el) => el.currentSrc')
@@ -32,6 +32,38 @@ with sync_playwright() as p:
         assert page.locator('iframe, video').count() == 0, 'VSL must load only after configuration and interaction'
         assert page.locator('.checkout-link').get_attribute('href') == 'https://app.ephra.io/checkout/v2/izv1zkf'
         assert page.locator('a[href="#"]').count() == 0, 'Dead placeholder link'
+        assert page.locator('img[src*="ebook-processos"]').count() == 0, 'All book covers must be official'
+        assert page.locator('img[src="assets/capa-original.webp"]').count() == 2
+        assert page.locator('.book-benefits-list li').count() == 7
+        assert page.locator('.community-benefits').get_by_text('Lives diárias', exact=True).count() == 1
+        assert page.locator('.community-identity img').is_visible()
+        assert 'WhatsApp' in page.locator('.community-identity').inner_text()
+        carousel = page.locator('.page-carousel')
+        carousel.locator('[data-carousel-next]').click()
+        assert '2 de 2' in carousel.locator('.carousel-counter').inner_text()
+        assert page.locator('[data-reading-slide]').nth(1).is_visible()
+        carousel.locator('[data-carousel-prev]').click()
+        assert page.locator('[data-reading-slide]').first.is_visible()
+        previews = page.locator('.page-preview')
+        previews.first.click()
+        viewer = page.locator('#page-viewer')
+        assert viewer.is_visible()
+        page.wait_for_function('document.querySelector(".viewer-image").complete && document.querySelector(".viewer-image").naturalWidth > 0')
+        assert '108' in viewer.locator('#page-viewer-title').inner_text()
+        viewer.locator('[data-viewer-zoom]').click()
+        assert viewer.locator('[data-viewer-zoom]').get_attribute('aria-pressed') == 'true'
+        assert viewer.locator('.viewer-body').evaluate('(el) => el.scrollWidth > el.clientWidth')
+        viewer.locator('[data-viewer-next]').click()
+        assert '109' in viewer.locator('#page-viewer-title').inner_text()
+        assert viewer.locator('[data-viewer-zoom]').get_attribute('aria-pressed') == 'false'
+        page.keyboard.press('Escape')
+        assert not viewer.is_visible()
+        assert previews.first.evaluate('(el) => document.activeElement === el')
+        previews.first.press('ArrowRight')
+        assert '2 de 2' in carousel.locator('.carousel-counter').inner_text()
+        previews.nth(2).press('ArrowLeft')
+        assert '1 de 2' in carousel.locator('.carousel-counter').inner_text()
+        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Gallery must not overflow the document'
         page.locator('.journey-list summary').first.click()
         assert page.locator('.journey-list details').first.get_attribute('open') is not None
         page.locator('.journey-list summary').first.press('Enter')
@@ -44,11 +76,12 @@ with sync_playwright() as p:
         page.locator('.footer-back').click()
         assert page.evaluate('location.hash') == '#inicio'
         page.emulate_media(reduced_motion='reduce')
+        page.evaluate('document.activeElement.blur()')
         page.evaluate('scrollTo(0, 0)')
         page.screenshot(path=str(OUT / f'{label}-hero.png'))
         if label in ['desktop', 'mobile']:
             page.screenshot(path=str(OUT / f'{label}-full.png'), full_page=True)
-            for selector, section in [('.devotional', 'ebook'), ('.sample-section', 'sample'), ('.community-section', 'community'), ('.offer-section', 'offer')]:
+            for selector, section in [('.recognition', 'gallery'), ('.devotional', 'ebook'), ('.book-benefits-section', 'benefits'), ('.sample-section', 'sample'), ('.community-section', 'community'), ('.offer-section', 'offer')]:
                 page.locator(selector).screenshot(path=str(OUT / f'{label}-{section}.png'))
         assert not errors, errors
         assert not bad_responses, bad_responses

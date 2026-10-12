@@ -15,13 +15,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://xn--recomeo-zxa.feliperissi.com.br/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/dynapuff-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/recomeco-desktop.webp" media="(min-width: 701px)">
   <link rel="preload" as="image" href="assets/recomeco-mobile.webp" media="(max-width: 700px)">
   <link rel="stylesheet" href="styles.css">
   <script src="config.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="gallery.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -72,12 +73,34 @@
           <p>Talvez você não saiba por onde começar.<br>Você pode começar levando a Deus o que sente.</p>
           <blockquote>“Deus, o que eu faço com a vida que sobrou depois disso?”</blockquote>
         </div>
-        <figure class="crown-image"><img src="assets/coroa-espinhos.webp" alt="Coroa de espinhos sobre pedra, com um tecido de linho e luz dourada" width="1536" height="1024" loading="lazy"><figcaption>O Deus de Processos foi escrito para esse lugar.</figcaption></figure>
+        <div class="page-carousel" aria-label="Exemplos de páginas do devocional" aria-roledescription="carrossel">
+          <div class="carousel-top"><span>Por dentro do devocional</span><span class="carousel-counter" aria-live="polite">Leitura 1 de 2</span></div>
+          <div class="reading-spread" data-reading-slide role="group" aria-label="Leitura sobre despedida, páginas 108 e 109">
+            <h3>Quando alguém sai da sua vida.</h3>
+            <div class="spread-pages">
+              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-108.webp" data-page-title="Página 108 — sobre a despedida" aria-label="Ampliar a página 108, início da leitura sobre despedida"><img src="assets/pages/pagina-108-preview.webp" alt="Página 108: Deus, por que o Senhor permitiu que essa pessoa saísse da minha vida?" width="1824" height="2616" loading="lazy"><span>Ampliar <span aria-hidden="true">↗</span></span></button>
+              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-109.webp" data-page-title="Página 109 — sobre a despedida" aria-label="Ampliar a página 109, continuação da leitura sobre despedida"><img src="assets/pages/pagina-109-preview.webp" alt="Página 109: continuação da leitura sobre despedida e mensagem em primeira pessoa" width="1848" height="2648" loading="lazy"><span>Ampliar <span aria-hidden="true">↗</span></span></button>
+            </div>
+          </div>
+          <div class="reading-spread" data-reading-slide role="group" aria-label="Leitura sobre perdão, páginas 110 e 111" hidden>
+            <h3>Quando perdoar parece impossível.</h3>
+            <div class="spread-pages">
+              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-110.webp" data-page-title="Página 110 — sobre o perdão" aria-label="Ampliar a página 110, início da leitura sobre perdão"><img src="assets/pages/pagina-110-preview.webp" alt="Página 110: Deus, como posso perdoar quem nunca me pediu perdão?" width="1816" height="2604" loading="lazy"><span>Ampliar <span aria-hidden="true">↗</span></span></button>
+              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-111.webp" data-page-title="Página 111 — sobre o perdão" aria-label="Ampliar a página 111, continuação da leitura sobre perdão"><img src="assets/pages/pagina-111-preview.webp" alt="Página 111: continuação da leitura sobre perdão e mensagem em primeira pessoa" width="1832" height="2616" loading="lazy"><span>Ampliar <span aria-hidden="true">↗</span></span></button>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Leitura anterior"><span aria-hidden="true">←</span></button>
+            <div class="carousel-dots"><button type="button" data-carousel-dot="0" aria-label="Mostrar leitura sobre despedida" aria-current="true"></button><button type="button" data-carousel-dot="1" aria-label="Mostrar leitura sobre perdão"></button></div>
+            <button class="carousel-arrow" type="button" data-carousel-next aria-label="Próxima leitura"><span aria-hidden="true">→</span></button>
+          </div>
+          <p class="carousel-hint">Duas páginas por leitura. Toque para ampliar.</p>
+        </div>
       </div>
     </section>
     <section class="section devotional" id="devocional" aria-labelledby="devotional-title">
       <div class="container devotional-grid">
-        <figure class="ebook-visual"><img src="assets/ebook-processos.webp" alt="Representação ilustrativa do ebook Deus de Processos em um tablet, ao lado de um caderno" width="1122" height="1402" loading="lazy"><figcaption>Ebook digital. Representação visual ilustrativa.</figcaption></figure>
+        <figure class="ebook-visual original-cover"><img src="assets/capa-original.webp" alt="Capa original do devocional Um Deus de Processos, com coroa de espinhos e fundo dourado" width="1024" height="1535" loading="lazy"><figcaption>Capa original do ebook. Produto digital.</figcaption></figure>
         <div class="devotional-copy">
           <p class="section-kicker">Conheça o Deus de Processos</p>
           <h2 id="devotional-title">60 dias de uma<br>conversa com Deus.</h2>
@@ -89,6 +112,20 @@
           </ol>
           <a class="text-link" href="#primeiro-dia">Experimente a primeira leitura <span aria-hidden="true">↗</span></a>
         </div>
+      </div>
+    </section>
+    <section class="section book-benefits-section" aria-labelledby="book-benefits-title">
+      <div class="container book-benefits-grid">
+        <div><p class="section-kicker">O que essa leitura pode construir</p><h2 id="book-benefits-title">Fé para continuar.<br>Princípios para viver.</h2><p>Aprendizados da Palavra para acompanhar as suas escolhas, seus relacionamentos e o seu recomeço.</p></div>
+        <ul class="book-benefits-list">
+          <li><span aria-hidden="true">✓</span><span>60 dias de uma conversa com Deus</span></li>
+          <li><span aria-hidden="true">✓</span><span>Aprendizados bíblicos</span></li>
+          <li><span aria-hidden="true">✓</span><span>Construa relacionamentos com princípios</span></li>
+          <li><span aria-hidden="true">✓</span><span>Incentivo para seguir em frente</span></li>
+          <li><span aria-hidden="true">✓</span><span>Fortaleça sua fé para continuar</span></li>
+          <li><span aria-hidden="true">✓</span><span>Aprenda a viver a espera</span></li>
+          <li><span aria-hidden="true">✓</span><span>10 temas respondendo às maiores dores do seu coração</span></li>
+        </ul>
       </div>
     </section>
     <section class="section sample-section" id="primeiro-dia" aria-labelledby="sample-title">
@@ -131,12 +168,13 @@
     <section class="section community-section" id="comunidade" aria-labelledby="community-title">
       <div class="container community-panel">
         <div class="community-copy">
-          <p class="section-kicker">Comunidade fechada PROCESSO</p><h2 id="community-title">O recomeço também<br>pode ser junto.</h2>
+          <div class="community-identity"><img src="assets/logo-comunidade.webp" alt="Logo oficial da Comunidade Processos, com coroa de espinhos dourada" width="1254" height="1254" loading="lazy"><p class="section-kicker">Comunidade fechada PROCESSOS<span>no WhatsApp</span></p></div><h2 id="community-title">O recomeço também<br>pode ser junto.</h2>
           <p>Um espaço para ler o devocional, compartilhar perguntas e aprofundar sua caminhada com Deus.</p>
           <div class="community-price"><span>Adicione por</span><strong>R$&nbsp;9,99</strong><span>Pagamento único. Sem mensalidade.</span></div>
           <a class="text-link" href="#oferta">Conheça a oferta <span aria-hidden="true">↗</span></a>
         </div>
         <ul class="community-benefits">
+          <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Lives diárias</h3><p>Um encontro todos os dias para fortalecer sua caminhada.</p></div></li>
           <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Leitura com companhia</h3><p>Vamos caminhar pelo devocional juntos.</p></div></li>
           <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Palavra e direção</h3><p>Explicações bíblicas e conselhos para o dia a dia.</p></div></li>
           <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Encontros para aprofundar</h3><p>Reuniões sobre os desafios do processo.</p></div></li>
@@ -149,13 +187,13 @@
       <div class="container offer-grid">
         <div class="offer-intro">
           <h2 id="offer-title">Uma leitura.<br>Uma oração.<br>Um novo começo.</h2><p>Você não precisa resolver toda a sua vida hoje.<br>Separe um momento para cuidar do próximo passo.</p>
-          <figure class="offer-image"><img src="assets/ebook-processos.webp" alt="Ilustração do devocional Deus de Processos em formato digital" width="1122" height="1402" loading="lazy"></figure>
+          <figure class="offer-image original-cover"><img src="assets/capa-original.webp" alt="Capa original do ebook Um Deus de Processos" width="1024" height="1535" loading="lazy"></figure>
         </div>
         <div class="offer-card">
           <p class="offer-format">Ebook digital</p><h3>Deus de Processos</h3><p class="offer-subtitle">Seu devocional de 60 dias, por Felipe Rissi.</p>
           <p class="offer-price"><span>R$</span>24,99</p><p class="payment-note">Pagamento único</p>
           <ul class="offer-includes"><li><span aria-hidden="true">✓</span>60 leituras e reflexões bíblicas</li><li><span aria-hidden="true">✓</span>10 jornadas, no seu ritmo</li><li><span aria-hidden="true">✓</span>179 páginas em formato digital</li><li><span aria-hidden="true">✓</span>Mensagens e espaço para oração</li></ul>
-          <div class="optional-community"><span class="optional-label">Quer caminhar com companhia?</span><div><strong>Comunidade PROCESSO</strong><span>+ R$&nbsp;9,99</span></div><p>Adicional opcional no checkout. Pagamento único, sem mensalidade.</p></div>
+          <div class="optional-community"><span class="optional-label">Quer caminhar com companhia?</span><div><strong>Comunidade PROCESSOS</strong><span>+ R$&nbsp;9,99</span></div><p>Lives diárias, leitura e oração em comunidade no WhatsApp. Adicional opcional no checkout, sem mensalidade.</p></div>
           <a class="button button-gold checkout-link" href="https://app.ephra.io/checkout/v2/izv1zkf">Quero meu devocional <span aria-hidden="true">↗</span></a>
           <p class="checkout-note">Você será direcionado ao checkout.<br>Acesso ao ebook após a confirmação da compra.</p>
         </div>
@@ -165,12 +203,12 @@
       <div class="container faq-grid">
         <div><p class="section-kicker">Antes do seu primeiro passo</p><h2 id="faq-title">Ainda tem<br>alguma dúvida?</h2></div>
         <div class="faq-list">
-          <details><summary>O livro é físico ou digital?<span class="expand-symbol" aria-hidden="true">+</span></summary><p>Esta oferta é do ebook digital Deus de Processos, com 179 páginas, por R$&nbsp;24,99. As imagens são representações ilustrativas.</p></details>
+          <details><summary>O livro é físico ou digital?<span class="expand-symbol" aria-hidden="true">+</span></summary><p>Esta oferta é do ebook digital Deus de Processos, com 179 páginas, por R$&nbsp;24,99. A capa e as páginas exibidas são do livro original.</p></details>
           <details><summary>É só para quem passou por um término?<span class="expand-symbol" aria-hidden="true">+</span></summary><p>Não. As leituras também abordam abandono, espera, comparação, medo, identidade, propósito e intimidade com Deus.</p></details>
           <details><summary>Preciso conhecer a Bíblia?<span class="expand-symbol" aria-hidden="true">+</span></summary><p>Não. As reflexões usam linguagem simples para explicar as histórias e aproximá-las da sua vida.</p></details>
           <details><summary>Como funciona a leitura?<span class="expand-symbol" aria-hidden="true">+</span></summary><p>A proposta é uma leitura por dia durante 60 dias. São 10 jornadas de 6 dias. Você pode começar pelo tema que mais fala com seu momento e seguir no seu ritmo.</p></details>
           <details><summary>O que são as mensagens em primeira pessoa?<span class="expand-symbol" aria-hidden="true">+</span></summary><p>São textos fundamentados na Bíblia, escritos como uma conversa com Deus. É um recurso do devocional para convidar você a refletir e orar.</p></details>
-          <details><summary>A comunidade está incluída no ebook?<span class="expand-symbol" aria-hidden="true">+</span></summary><p>A comunidade PROCESSO é um adicional opcional por R$&nbsp;9,99, com pagamento único e sem mensalidade. A compra do ebook é independente da comunidade.</p></details>
+          <details><summary>A comunidade está incluída no ebook?<span class="expand-symbol" aria-hidden="true">+</span></summary><p>A comunidade PROCESSOS é um adicional opcional por R$&nbsp;9,99, no WhatsApp, com lives diárias, leitura, encontros e oração em comunidade. O pagamento é único, sem mensalidade, e a compra do ebook é independente da comunidade.</p></details>
         </div>
       </div>
     </section>
@@ -178,6 +216,11 @@
       <div class="container author-inner"><div class="author-monogram" aria-hidden="true">fr.</div><div><h2 id="author-title">Uma jornada que nasceu de uma busca real.</h2><p>“Escrevi o Deus de Processos no meu pior momento, quando enfrentei um término, uma quebra financeira e o abandono. Foi nesse lugar que precisei buscar a Deus e entender o que Ele tinha para mim.”</p><span>Felipe Rissi, autor do devocional</span></div></div>
     </section>
   </main>
+  <dialog class="page-viewer" id="page-viewer" aria-labelledby="page-viewer-title">
+    <div class="viewer-toolbar"><h2 id="page-viewer-title">Página do devocional</h2><button class="viewer-close" type="button" aria-label="Fechar página ampliada"><span aria-hidden="true">×</span></button></div>
+    <div class="viewer-body" tabindex="0" aria-label="Página do livro, área de leitura"><img class="viewer-image" alt="" width="1824" height="2616"></div>
+    <div class="viewer-controls"><button type="button" data-viewer-prev aria-label="Página anterior"><span aria-hidden="true">←</span></button><span class="viewer-counter" aria-live="polite"></span><button type="button" data-viewer-zoom aria-pressed="false">Aproximar</button><button type="button" data-viewer-next aria-label="Próxima página"><span aria-hidden="true">→</span></button></div>
+  </dialog>
   <footer class="site-footer"><div class="container footer-inner"><a class="wordmark" href="#inicio" aria-label="Recomeço, voltar ao início">recomeço</a><p>Deus de Processos · Felipe Rissi<br>Um dia de cada vez.</p><a class="footer-back" href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a></div></footer>
 </body>
 </html>

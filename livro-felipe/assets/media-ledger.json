@@ -5,16 +5,6 @@
       "file": "assets/recomeco-jesus.webp",
       "prompt": "Use case: historical-scene. Asset type: cinematic illustration used as a website video poster and devotional campaign photograph. Create a wide 16:9 cinematic photorealistic artistic depiction of Jesus, a Middle Eastern man in his early thirties with dark brown wavy shoulder-length hair and a natural beard, wearing a plain textured undyed linen robe. He is near the RIGHT third of the frame in a quiet ancient olive grove at sunset, looking gently toward the camera and extending a hand in a welcoming subtle gesture. Warm amber sunlight softly crosses his face, shadows are espresso brown; olive branches and deep shadow on the left give ample dark negative space. Quiet, human, comforting, very natural film photography, no halo, no supernatural effects, no violence or blood, no writing, no text, no watermark. Beautiful soft highlights and real fabric texture. The scene should feel hopeful and sincere, never like a stock portrait.",
       "illustrative": true
-    },
-    {
-      "file": "assets/ebook-processos.webp",
-      "prompt": "Use case: product-mockup. Asset type: tall 4:5 promotional product illustration for a DIGITAL devotional ebook, not a real photographed product. A premium photorealistic editorial still life on a dark espresso-brown stone pedestal: a slim elegant dark tablet in portrait orientation, its screen displaying a restrained elegant book cover with EXACT readable Portuguese title 'Deus de Processos', smaller subtitle '60 dias de uma conversa com Deus', author 'Felipe Rissi'. Design the illustrative cover using warm ivory lettering and a subtle finely detailed gold crown of thorns at the lower center on deep dark brown. Next to the tablet lies a small closed linen-bound blank journal and a delicate real thorn branch; warm amber window light, a few subtle dust particles, deep shadow, tactile materials, a premium photographic look. No other writing, no badges, no logos, no extra devices. Frame the tablet entirely with generous surrounding breathing room. No hands or people. This is an illustrative new product visual.",
-      "illustrative": true
-    },
-    {
-      "file": "assets/coroa-espinhos.webp",
-      "prompt": "Use case: photorealistic-natural. Asset type: wide editorial religious still-life photograph for a devotional landing page. Wide 3:2 fine art photograph of a real ancient crown of thorns laid on a roughly textured warm sandstone surface, positioned on the RIGHT side with softly crumpled natural ivory linen entering lower right. One gentle angled beam of warm golden sunlight from upper left illuminates the thorns, the left half falls into dark espresso shadows with plenty of quiet negative space. Deep brown, bronze, soft gold and ivory. Museum-quality still life, extremely tactile realistic detail, reverent hopeful tone, no blood, no people, no text, no graphics, no watermark. Restrained and beautiful, shallow depth of field.",
-      "illustrative": true
     }
   ],
   "backgrounds": [
@@ -26,5 +16,6 @@
       "file": "assets/recomeco-mobile.webp",
       "source": "background recomeço mobile.png"
     }
-  ]
+  ],
+  "bookAssetsLedger": "assets/book-media-ledger.json"
 }

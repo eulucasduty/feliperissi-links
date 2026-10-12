@@ -1,10 +1,11 @@
 # Deus de Processos — landing page
 
-Landing page estática do ebook de Felipe Rissi e da comunidade PROCESSO.
+Landing page estática do ebook de Felipe Rissi e da comunidade PROCESSOS no WhatsApp.
 
 - `index.html`: estrutura e conteúdo da página.
 - `styles.css`: identidade visual e layout responsivo.
 - `app.js`: integração do player e aplicação da configuração.
+- `gallery.js`: carrossel de leituras e visualizador ampliado das páginas.
 - `config.js`: link de checkout e configuração da VSL.
 - `assets/`: imagens da página.
 - `vercel.json`: configuração própria desta landing page.
@@ -51,10 +52,17 @@ Para MP4/WebM direto, use `type: "video"` e indique legendas WebVTT em
 
 ## Design e imagens
 
-`design.md` registra a direção visual. As fontes DynaPuff e Manrope são locais,
-com licenças em `assets/fonts/`. A fonte do print é uma referência aproximada,
-pendente de identificação exata. As imagens novas estão em WebP. A representação
-do ebook é ilustrativa, não uma nova capa oficial nem produto físico.
+`design.md` registra a direção visual. As fontes Lora e Manrope são locais,
+com licenças em `assets/fonts/`. A capa do ebook e a logo da comunidade são
+originais, fornecidas pelo usuário. A comunidade no WhatsApp inclui lives diárias.
+Os 7 benefícios do ebook são os fornecidos no print.
+
+As páginas 108–109 e 110–111 aparecem em duas leituras no carrossel. Cada página
+abre em um visualizador com navegação, zoom, fechamento por Escape e retorno do
+foco. A ampliação foi feita localmente em 4x com `realesrgan-ncnn-vulkan`, modelo
+`realesrgan-x4plus`. O comando `/upscale` não estava instalado neste ambiente.
+As imagens ampliadas ficam em `assets/pages/` como WebP sem perdas; prévias
+menores carregam no carrossel. A proveniência fica em `assets/book-media-ledger.json`.
 
 ## Verificação
 

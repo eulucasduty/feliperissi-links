@@ -1,0 +1,88 @@
+{
+  "cover": {
+    "file": "assets/capa-original.webp",
+    "source": "capa do livro o deus de processo.png",
+    "official": true
+  },
+  "communityLogo": {
+    "file": "assets/logo-comunidade.webp",
+    "source": "logo comunidade felipe rissi.png",
+    "official": true
+  },
+  "pages": [
+    {
+      "page": 108,
+      "original": "WhatsApp Image 2026-10-12 at 20.08.47.jpeg",
+      "originalSize": [
+        456,
+        654
+      ],
+      "size": [
+        1824,
+        2616
+      ],
+      "file": "assets/pages/pagina-108.webp",
+      "preview": "assets/pages/pagina-108-preview.webp",
+      "upscale": "Real-ESRGAN ncnn Vulkan, realesrgan-x4plus, 4x",
+      "encoding": "lossless WebP"
+    },
+    {
+      "page": 109,
+      "original": "WhatsApp Image 2026-10-12 at 20.08.48.jpeg",
+      "originalSize": [
+        462,
+        662
+      ],
+      "size": [
+        1848,
+        2648
+      ],
+      "file": "assets/pages/pagina-109.webp",
+      "preview": "assets/pages/pagina-109-preview.webp",
+      "upscale": "Real-ESRGAN ncnn Vulkan, realesrgan-x4plus, 4x",
+      "encoding": "lossless WebP"
+    },
+    {
+      "page": 110,
+      "original": "WhatsApp Image 2026-10-12 at 20.08.48 (1).jpeg",
+      "originalSize": [
+        454,
+        651
+      ],
+      "size": [
+        1816,
+        2604
+      ],
+      "file": "assets/pages/pagina-110.webp",
+      "preview": "assets/pages/pagina-110-preview.webp",
+      "upscale": "Real-ESRGAN ncnn Vulkan, realesrgan-x4plus, 4x",
+      "encoding": "lossless WebP"
+    },
+    {
+      "page": 111,
+      "original": "WhatsApp Image 2026-10-12 at 20.08.48 (2).jpeg",
+      "originalSize": [
+        458,
+        654
+      ],
+      "size": [
+        1832,
+        2616
+      ],
+      "file": "assets/pages/pagina-111.webp",
+      "preview": "assets/pages/pagina-111-preview.webp",
+      "upscale": "Real-ESRGAN ncnn Vulkan, realesrgan-x4plus, 4x",
+      "encoding": "lossless WebP"
+    }
+  ],
+  "readingGroups": [
+    [
+      108,
+      109
+    ],
+    [
+      110,
+      111
+    ]
+  ]
+}
