@@ -18,7 +18,7 @@ Revisão visual feita em capturas desktop e mobile.
 
 ## Pendências externas
 
-- VSL real: usuário enviará depois; ainda não existe vídeo ativo na hero.
+- VSL: YouTube `KtIwh-f2Ysc`, carregado após clique; vertical no mobile.
 - Fonte do print: DynaPuff é uma aproximação, não identificação exata.
 - Order bump: a apresentação na LP não configura a seleção/cobrança de comunidade
   na plataforma externa; essa configuração deve existir no checkout.

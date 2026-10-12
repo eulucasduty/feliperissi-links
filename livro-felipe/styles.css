@@ -251,6 +251,7 @@ summary{font-size:15px}details>p{font-size:14px}
 }
 @media(max-width:360px){.container{width:calc(100% - 32px)}.hero h1{font-size:31px}.header-cta{font-size:9px;padding-inline:11px}.wordmark{font-size:24px}.offer-card{padding-inline:20px}.community-panel{padding-inline:20px}.optional-community>div{font-size:10px}.hero-facts dd{font-size:8px}}
 @media(max-width:700px){
+  .vsl-frame.is-playing.is-portrait{aspect-ratio:9/16;max-width:390px}
   .header-cta{font-size:11px}.hero-intro{font-size:11px}.hero-description{font-size:14px}
   .hero-action .button{font-size:13px}.hero-action p{font-size:11px}
   .hero-facts dd{font-size:10px}

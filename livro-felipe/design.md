@@ -39,7 +39,7 @@ Nenhum layout, estilo ou imagem anterior é reaproveitado.
 Backgrounds desktop e mobile fornecidos pelo usuário, convertidos para WebP
 sem mudança de composição. Jesus, coroa e tablet são imagens novas geradas.
 O tablet é uma representação visual, não a capa final nem um produto físico.
-A VSL será conectada depois; não há botão de reprodução falso.
+A VSL do YouTube é carregada após clique; seu vídeo vertical é preservado no mobile.
 A tipografia solicitada substitui a estética serifada anterior. O dourado vem
 das nuvens e da coroa. Jornadas recolhidas reduzem o texto na primeira leitura.
 Não há seleção local da comunidade que possa ser confundida com cobrança.

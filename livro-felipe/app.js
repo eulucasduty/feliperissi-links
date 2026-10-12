@@ -16,6 +16,7 @@
   const host = document.querySelector(".vsl-player");
   if (!videoUrl || !["embed", "video"].includes(vsl.type) || !button || !host) return;
   button.hidden = false;
+  if (vsl.orientation === "portrait") document.getElementById("vsl").classList.add("is-portrait");
   document.querySelector("[data-vsl-fallback]").hidden = true;
   button.addEventListener("click", () => {
     let player;

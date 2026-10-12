@@ -27,7 +27,8 @@ with sync_playwright() as p:
         background = page.locator('.hero-background img').evaluate('(el) => el.currentSrc')
         assert ('mobile' if width <= 700 else 'desktop') in background, background
         assert page.locator('h1').count() == 1
-        assert not page.locator('.vsl-play').is_visible(), 'Empty VSL must not show a fake play control'
+        has_vsl = page.evaluate('Boolean(window.RECOMECO_CONFIG?.vsl?.url)')
+        assert page.locator('.vsl-play').is_visible() == has_vsl, 'Play control must match VSL configuration'
         assert page.locator('iframe, video').count() == 0, 'VSL must load only after configuration and interaction'
         assert page.locator('.checkout-link').get_attribute('href') == 'https://app.ephra.io/checkout/v2/izv1zkf'
         assert page.locator('a[href="#"]').count() == 0, 'Dead placeholder link'

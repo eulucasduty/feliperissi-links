@@ -32,7 +32,9 @@ como order bump na plataforma de checkout, não na landing page.
 
 ## VSL
 
-O vídeo será fornecido depois. Enquanto `vsl.url` estiver vazio, a hero exibe uma
+VSL atual: https://www.youtube.com/shorts/KtIwh-f2Ysc, incorporada na hero.
+O player abre após o clique, com proporção vertical no mobile.
+Enquanto `vsl.url` estiver vazio, a hero exibe uma
 imagem editorial com link real para o primeiro dia, sem controles de vídeo falsos.
 Para integrar, preencha em `config.js`:
 
