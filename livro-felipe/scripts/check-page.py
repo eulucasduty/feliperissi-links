@@ -13,7 +13,8 @@ with sync_playwright() as p:
     report = []
     for width, height, label in [(1440, 1000, 'desktop'), (390, 844, 'mobile'), (320, 800, 'small-mobile'), (768, 1024, 'tablet')]:
         page = browser.new_page(viewport={'width': width, 'height': height}, device_scale_factor=1)
-        errors, bad_responses = [], []
+        errors, bad_responses, video_requests = [], [], []
+        page.on('request', lambda request: video_requests.append(request.url) if '.mp4' in request.url else None)
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.on('response', lambda response: bad_responses.append(f'{response.status} {response.url}') if response.status >= 400 else None)
         response = page.goto(URL, wait_until='networkidle')
@@ -30,6 +31,7 @@ with sync_playwright() as p:
         has_vsl = page.evaluate('Boolean(window.RECOMECO_CONFIG?.vsl?.url)')
         assert page.locator('.vsl-play').is_visible() == has_vsl, 'Play control must match VSL configuration'
         assert page.locator('iframe, video').count() == 0, 'VSL must load only after configuration and interaction'
+        assert not video_requests, 'The MP4 must not be downloaded before a click'
         assert page.locator('.checkout-link').get_attribute('href') == 'https://app.ephra.io/checkout/v2/izv1zkf'
         assert page.locator('a[href="#"]').count() == 0, 'Dead placeholder link'
         assert page.locator('img[src*="ebook-processos"]').count() == 0, 'All book covers must be official'
@@ -110,6 +112,18 @@ with sync_playwright() as p:
             page.screenshot(path=str(OUT / f'{label}-full.png'), full_page=True)
             for selector, section in [('.recognition', 'gallery'), ('.devotional', 'ebook'), ('.book-benefits-section', 'benefits'), ('.sample-section', 'sample'), ('.community-section', 'community'), ('.offer-section', 'offer')]:
                 page.locator(selector).screenshot(path=str(OUT / f'{label}-{section}.png'))
+        if page.evaluate('window.RECOMECO_CONFIG?.vsl?.type === "video"'):
+            page.locator('.vsl-play').click()
+            assert page.locator('iframe').count() == 0
+            video = page.locator('.vsl-player video')
+            page.wait_for_function('document.querySelector("video")?.currentTime > 0.1')
+            assert video.evaluate('(el) => el.controls && el.playsInline && !el.muted && el.duration > 0')
+            assert video.evaluate('(el) => Math.abs(el.videoWidth / el.videoHeight - 16 / 9) < 0.01')
+            video.evaluate('(el) => { el.pause(); el.currentTime = el.duration - 5; }')
+            page.wait_for_function('(() => { const v = document.querySelector("video"); return !v.seeking && v.currentTime > v.duration - 6; })()')
+            assert video.evaluate('(el) => el.currentTime > el.duration - 6')
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            page.locator('.vsl-frame').screenshot(path=str(OUT / f'{label}-native-video.png'))
         assert not errors, errors
         assert not bad_responses, bad_responses
         report.append({'viewport': label, 'width': width, 'height': page.evaluate('document.documentElement.scrollHeight'), 'consoleErrors': errors, 'failedResponses': bad_responses})

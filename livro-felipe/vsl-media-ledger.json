@@ -1,0 +1,12 @@
+{
+  "source": "C:\\Users\\User\\Downloads\\vsl deus de processo",
+  "sourceBytes": 231819945,
+  "asset": "assets/vsl-deus-de-processos.mp4",
+  "bytes": 25168008,
+  "durationSeconds": 150.4,
+  "video": "H.264, 1280x720, 30 fps, yuv420p",
+  "audio": "AAC, 96 kbit/s",
+  "faststart": true,
+  "transformation": "FFmpeg libx264 medium, CRF 25, maxrate 1800k, bufsize 3600k; full duration, no crop",
+  "providedBy": "user"
+}

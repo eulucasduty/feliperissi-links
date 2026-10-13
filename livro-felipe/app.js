@@ -24,6 +24,7 @@
       player = document.createElement("video");
       player.controls = true;
       player.playsInline = true;
+      player.preload = "metadata";
       player.src = videoUrl.href;
       player.setAttribute("aria-label", "Mensagem de Felipe Rissi sobre o devocional");
       const captions = safeUrl(vsl.captionsUrl);

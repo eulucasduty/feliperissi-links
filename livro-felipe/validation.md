@@ -30,6 +30,11 @@ verificados em 1440, 768, 390 e 320px após esses ajustes.
 Chrome: 1440px, 768px, 390px e 320px. Sem rolagem horizontal, imagens quebradas,
 erros JavaScript ou respostas HTTP de erro. Jornadas, FAQ, âncoras e endereço de
 checkout verificados. Incorporação da VSL validada com recurso de teste local.
+Player MP4 nativo validado nos quatro tamanhos com reprodução após clique,
+áudio habilitado, controles, proporção 16:9 e avanço para o final do vídeo.
+Nenhuma requisição ao MP4 ocorre antes do clique. Prévia local com suporte a
+HTTP Range; conversão completa decodificada sem erros e `faststart` verificado.
+Arquivo reduzido de 231.819.945 para 25.168.008 bytes, duração de 150,4 segundos.
 Revisão visual feita em capturas desktop e mobile. Capa original, logo, 7
 benefícios e lives diárias verificados. Páginas ampliadas em 4x, nos pares 108–109
 e 110–111, com imagens grandes carregadas somente ao abrir o visualizador.
@@ -39,7 +44,7 @@ também durante o movimento; modo de movimento reduzido verificado.
 
 ## Pendências externas
 
-- VSL: YouTube `KtIwh-f2Ysc`, carregado após clique; vertical no mobile.
+- VSL: MP4 local H.264/AAC, 720p/30 fps, 16:9; carregado após clique.
 - Tipografia atual: Lora e Manrope, conforme o pedido de fonte mais séria.
 - Order bump: a apresentação na LP não configura a seleção/cobrança de comunidade
   na plataforma externa; essa configuração deve existir no checkout.
