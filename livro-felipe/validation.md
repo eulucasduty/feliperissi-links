@@ -17,6 +17,11 @@
 
 ## Verificação no navegador
 
+Copy revisada conforme `ajustes copy lp efa.docx`, fornecido em 12/10/2026.
+Títulos, benefícios, jornadas, comunidade, oferta, FAQ, mensagem do autor e
+metadados atualizados. Quebras e larguras ajustadas para os textos novos;
+verificação nos quatro tamanhos abaixo passou após a atualização.
+
 Chrome: 1440px, 768px, 390px e 320px. Sem rolagem horizontal, imagens quebradas,
 erros JavaScript ou respostas HTTP de erro. Jornadas, FAQ, âncoras e endereço de
 checkout verificados. Incorporação da VSL validada com recurso de teste local.

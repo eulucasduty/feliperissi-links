@@ -1,4 +1,10 @@
 /* Photography, a full-size book leaf, and an iPad reading view. */
+.hero-description{max-width:62ch}
+.hero-facts>div{flex-direction:column;gap:8px}
+.hero-facts dd{max-width:150px;text-align:center;font-size:12px}
+.book-carousel>.section-kicker{margin-bottom:18px}
+.offer-card .button{gap:16px;text-align:center}
+@media(max-width:700px){.hero-facts dd{font-size:10px;max-width:100px}.offer-card .button{gap:12px;font-size:13px}}
 .hero-background img{object-position:72% center}
 .hero::before{background:linear-gradient(180deg,rgba(15,9,4,.49),rgba(15,9,4,.49) 33%,rgba(15,9,4,.28) 57%,rgba(22,15,11,.88) 84%,var(--ink) 100%)}
 .recognition-grid{grid-template-columns:.9fr 1.1fr;gap:85px}
