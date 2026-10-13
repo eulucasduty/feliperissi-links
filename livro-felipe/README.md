@@ -4,6 +4,7 @@ Landing page estática do ebook de Felipe Rissi e da comunidade PROCESSOS no Wha
 
 - `index.html`: estrutura e conteúdo da página.
 - `styles.css`: identidade visual e layout responsivo.
+- `editorial.css`: hero histórica, livro com virada de páginas e moldura de iPad.
 - `app.js`: integração do player e aplicação da configuração.
 - `gallery.js`: carrossel de leituras e visualizador ampliado das páginas.
 - `config.js`: link de checkout e configuração da VSL.
@@ -57,12 +58,21 @@ com licenças em `assets/fonts/`. A capa do ebook e a logo da comunidade são
 originais, fornecidas pelo usuário. A comunidade no WhatsApp inclui lives diárias.
 Os 7 benefícios do ebook são os fornecidos no print.
 
-As páginas 108–109 e 110–111 aparecem em duas leituras no carrossel. Cada página
-abre em um visualizador com navegação, zoom, fechamento por Escape e retorno do
-foco. A ampliação foi feita localmente em 4x com `realesrgan-ncnn-vulkan`, modelo
+As páginas 108–109 (dia 2) e 110–111 (dia 3) aparecem uma por vez, em tamanho grande,
+com virada em perspectiva. Há botões, navegação por teclado e deslize no celular.
+A terceira foto inicia o dia 3, indicado acima do livro. Cada página também abre
+em um visualizador com zoom, Escape e retorno do foco.
+O primeiro dia possui um segundo carrossel: três trechos dentro de uma moldura
+de iPad, com botões, teclado e deslize. As animações respeitam movimento reduzido.
+A ampliação das páginas foi feita localmente em 4x com `realesrgan-ncnn-vulkan`, modelo
 `realesrgan-x4plus`. O comando `/upscale` não estava instalado neste ambiente.
 As imagens ampliadas ficam em `assets/pages/` como WebP sem perdas; prévias
 menores carregam no carrossel. A proveniência fica em `assets/book-media-ledger.json`.
+
+A hero usa `hero desktop.jpeg`, com enquadramento próprio no mobile e WebP.
+A foto do autor é `efa foto perfil.jpeg`, apresentada como retrato circular.
+Os benefícios da comunidade usam ícones Phosphor duotone, hospedados localmente
+com licença MIT. Proveniência: `assets/editorial-media-ledger.json`.
 
 ## Verificação
 

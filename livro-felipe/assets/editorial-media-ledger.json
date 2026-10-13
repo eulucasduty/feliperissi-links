@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "source": "hero desktop.jpeg",
+    "originalSize": [1600, 900],
+    "desktop": "assets/hero-historico-desktop.webp",
+    "mobile": "assets/hero-historico-mobile.webp",
+    "mobileCrop": {"x": 992, "y": 0, "width": 608, "height": 900},
+    "operation": "WebP encoding and deterministic mobile crop; no regeneration"
+  },
+  "author": {
+    "source": "efa foto perfil.jpeg",
+    "originalSize": [1024, 1360],
+    "file": "assets/felipe-rissi-perfil.webp",
+    "size": [512, 680],
+    "operation": "Aspect-preserving downsample; portrait framed in CSS"
+  },
+  "icons": {
+    "source": "https://github.com/phosphor-icons/core/tree/main/assets/duotone",
+    "license": "assets/icons/PHOSPHOR-LICENSE.txt",
+    "files": ["broadcast.svg", "book-open-text.svg", "compass-rose.svg", "users-four.svg", "hands-praying.svg"],
+    "operation": "Original SVG paths, root color set to #e0bb7d"
+  },
+  "readingDays": {"108": 2, "109": 2, "110": 3, "111": 3}
+}

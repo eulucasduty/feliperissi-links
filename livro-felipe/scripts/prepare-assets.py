@@ -8,8 +8,6 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / 'assets'
 GENERATED = Path('C:/Users/User/.codex/generated_images/01a13109-91ca-7390-91cc-6ac3df020e38')
 IMAGES = {
-    'recomeco-desktop': (Path('C:/Users/User/Downloads/background recomeço desktop.png'), 1672),
-    'recomeco-mobile': (Path('C:/Users/User/Downloads/background recomeço mobile.png'), 941),
     'recomeco-jesus': (GENERATED / 'exec-4f88c82d-6cea-4b99-b167-45b066a1bb5a.png', 1672),
 }
 ASSETS.mkdir(exist_ok=True)

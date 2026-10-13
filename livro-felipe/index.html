@@ -17,9 +17,10 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/recomeco-desktop.webp" media="(min-width: 701px)">
-  <link rel="preload" as="image" href="assets/recomeco-mobile.webp" media="(max-width: 700px)">
+  <link rel="preload" as="image" href="assets/hero-historico-desktop.webp" media="(min-width: 701px)">
+  <link rel="preload" as="image" href="assets/hero-historico-mobile.webp" media="(max-width: 700px)">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="editorial.css">
   <script src="config.js" defer></script>
   <script src="app.js" defer></script>
   <script src="gallery.js" defer></script>
@@ -39,8 +40,8 @@
   <main id="conteudo">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <picture class="hero-background" aria-hidden="true">
-        <source media="(max-width: 700px)" srcset="assets/recomeco-mobile.webp">
-        <img src="assets/recomeco-desktop.webp" alt="" width="1672" height="941" fetchpriority="high">
+        <source media="(max-width: 700px)" srcset="assets/hero-historico-mobile.webp">
+        <img src="assets/hero-historico-desktop.webp" alt="" width="1600" height="900" fetchpriority="high">
       </picture>
       <div class="container hero-content">
         <p class="hero-intro">Deus de Processos, um devocional de Felipe Rissi</p>
@@ -73,28 +74,33 @@
           <p>Talvez você não saiba por onde começar.<br>Você pode começar levando a Deus o que sente.</p>
           <blockquote>“Deus, o que eu faço com a vida que sobrou depois disso?”</blockquote>
         </div>
-        <div class="page-carousel" aria-label="Exemplos de páginas do devocional" aria-roledescription="carrossel">
-          <div class="carousel-top"><span>Por dentro do devocional</span><span class="carousel-counter" aria-live="polite">Leitura 1 de 2</span></div>
-          <div class="reading-spread" data-reading-slide role="group" aria-label="Leitura sobre despedida, páginas 108 e 109">
-            <h3>Quando alguém sai da sua vida.</h3>
-            <div class="spread-pages">
-              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-108.webp" data-page-title="Página 108 — sobre a despedida" aria-label="Ampliar a página 108, início da leitura sobre despedida"><img src="assets/pages/pagina-108-preview.webp" alt="Página 108: Deus, por que o Senhor permitiu que essa pessoa saísse da minha vida?" width="1824" height="2616" loading="lazy"><span>Ampliar <span aria-hidden="true">↗</span></span></button>
-              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-109.webp" data-page-title="Página 109 — sobre a despedida" aria-label="Ampliar a página 109, continuação da leitura sobre despedida"><img src="assets/pages/pagina-109-preview.webp" alt="Página 109: continuação da leitura sobre despedida e mensagem em primeira pessoa" width="1848" height="2648" loading="lazy"><span>Ampliar <span aria-hidden="true">↗</span></span></button>
+        <div class="page-carousel book-carousel" aria-label="Folheie as páginas do devocional" aria-roledescription="carrossel">
+          <div class="book-heading"><span class="book-day" aria-live="polite">Dia 2</span><span class="carousel-counter" aria-live="polite">Página 1 de 4</span></div>
+          <h3 class="book-topic">Quando alguém sai da sua vida.</h3>
+          <div class="book-stage">
+            <div class="book-spine" aria-hidden="true"></div>
+            <figure class="book-page" data-book-page data-day="2" data-topic="Quando alguém sai da sua vida." role="group" aria-label="Dia 2, página 108">
+              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-108.webp" data-page-title="Dia 2 — página 108" aria-label="Ampliar a página 108, dia 2, início da leitura sobre despedida"><img src="assets/pages/pagina-108-preview.webp" alt="Página 108: Deus, por que o Senhor permitiu que essa pessoa saísse da minha vida?" width="1824" height="2616" loading="lazy"></button>
+            </figure>
+            <figure class="book-page" data-book-page data-day="2" data-topic="Quando alguém sai da sua vida." role="group" aria-label="Dia 2, página 109" hidden>
+              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-109.webp" data-page-title="Dia 2 — página 109" aria-label="Ampliar a página 109, dia 2, continuação da leitura sobre despedida"><img src="assets/pages/pagina-109-preview.webp" alt="Página 109: continuação da leitura sobre despedida e mensagem em primeira pessoa" width="1848" height="2648" loading="lazy"></button>
+            </figure>
+            <figure class="book-page" data-book-page data-day="3" data-topic="Quando perdoar parece impossível." role="group" aria-label="Dia 3, página 110" hidden>
+              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-110.webp" data-page-title="Dia 3 — página 110" aria-label="Ampliar a página 110, dia 3, início da leitura sobre perdão"><img src="assets/pages/pagina-110-preview.webp" alt="Página 110: Deus, como posso perdoar quem nunca me pediu perdão?" width="1816" height="2604" loading="lazy"></button>
+            </figure>
+            <figure class="book-page" data-book-page data-day="3" data-topic="Quando perdoar parece impossível." role="group" aria-label="Dia 3, página 111" hidden>
+              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-111.webp" data-page-title="Dia 3 — página 111" aria-label="Ampliar a página 111, dia 3, continuação da leitura sobre perdão"><img src="assets/pages/pagina-111-preview.webp" alt="Página 111: continuação da leitura sobre perdão e mensagem em primeira pessoa" width="1832" height="2616" loading="lazy"></button>
+            </figure>
+          </div>
+          <div class="book-footer">
+            <div class="carousel-controls">
+              <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Página anterior do livro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+              <div class="carousel-dots"><button type="button" data-carousel-dot="0" aria-label="Mostrar página 108, dia 2" aria-current="true"></button><button type="button" data-carousel-dot="1" aria-label="Mostrar página 109, dia 2"></button><button type="button" data-carousel-dot="2" aria-label="Mostrar página 110, dia 3"></button><button type="button" data-carousel-dot="3" aria-label="Mostrar página 111, dia 3"></button></div>
+              <button class="carousel-arrow" type="button" data-carousel-next aria-label="Virar para a próxima página do livro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
             </div>
+            <button class="book-enlarge" type="button" data-book-enlarge><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/></svg>Ampliar página</button>
           </div>
-          <div class="reading-spread" data-reading-slide role="group" aria-label="Leitura sobre perdão, páginas 110 e 111" hidden>
-            <h3>Quando perdoar parece impossível.</h3>
-            <div class="spread-pages">
-              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-110.webp" data-page-title="Página 110 — sobre o perdão" aria-label="Ampliar a página 110, início da leitura sobre perdão"><img src="assets/pages/pagina-110-preview.webp" alt="Página 110: Deus, como posso perdoar quem nunca me pediu perdão?" width="1816" height="2604" loading="lazy"><span>Ampliar <span aria-hidden="true">↗</span></span></button>
-              <button class="page-preview" type="button" data-page-src="assets/pages/pagina-111.webp" data-page-title="Página 111 — sobre o perdão" aria-label="Ampliar a página 111, continuação da leitura sobre perdão"><img src="assets/pages/pagina-111-preview.webp" alt="Página 111: continuação da leitura sobre perdão e mensagem em primeira pessoa" width="1832" height="2616" loading="lazy"><span>Ampliar <span aria-hidden="true">↗</span></span></button>
-            </div>
-          </div>
-          <div class="carousel-controls">
-            <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Leitura anterior"><span aria-hidden="true">←</span></button>
-            <div class="carousel-dots"><button type="button" data-carousel-dot="0" aria-label="Mostrar leitura sobre despedida" aria-current="true"></button><button type="button" data-carousel-dot="1" aria-label="Mostrar leitura sobre perdão"></button></div>
-            <button class="carousel-arrow" type="button" data-carousel-next aria-label="Próxima leitura"><span aria-hidden="true">→</span></button>
-          </div>
-          <p class="carousel-hint">Duas páginas por leitura. Toque para ampliar.</p>
+          <p class="carousel-hint">Vire a página para continuar a leitura.</p>
         </div>
       </div>
     </section>
@@ -136,11 +142,24 @@
           <p>Essa é a pergunta do primeiro dia. Uma leitura que caminha com Jó e abre espaço para as suas próprias perguntas.</p>
           <span class="scripture-reference">Jornada 1 · Dia 1 · Jó 1–2</span>
         </div>
-        <figure class="reading-excerpt">
-          <span class="excerpt-heading">Um trecho do primeiro dia</span><span class="quote-mark" aria-hidden="true">“</span>
-          <blockquote><p>Não confunda a Minha permissão com a Minha ausência. Eu estava lá quando aconteceu.</p><p>Não pense que os melhores capítulos da sua vida ficaram para trás. Segure a Minha mão.</p><p>A sua história não terminou no que aconteceu com você.</p></blockquote>
-          <figcaption>Mensagem em primeira pessoa do devocional,<br>fundamentada na Palavra.</figcaption>
-        </figure>
+        <div class="ipad-carousel" aria-label="Trechos do primeiro dia do devocional" aria-roledescription="carrossel">
+          <div class="ipad-frame">
+            <span class="ipad-camera" aria-hidden="true"></span>
+            <div class="ipad-screen">
+              <div class="ipad-reading-header"><span>Deus de Processos</span><span>Dia 1</span></div>
+              <p class="ipad-reading-label">Um trecho do primeiro dia</p>
+              <div class="ipad-text-stage">
+                <blockquote class="ipad-text-slide" data-ipad-slide role="group" aria-label="Trecho 1 de 3"><span class="ipad-quote" aria-hidden="true">“</span><p>Não confunda a Minha permissão com a Minha ausência. Eu estava lá quando aconteceu.</p></blockquote>
+                <blockquote class="ipad-text-slide" data-ipad-slide role="group" aria-label="Trecho 2 de 3" hidden><span class="ipad-quote" aria-hidden="true">“</span><p>Não pense que os melhores capítulos da sua vida ficaram para trás. Segure a Minha mão.</p></blockquote>
+                <blockquote class="ipad-text-slide" data-ipad-slide role="group" aria-label="Trecho 3 de 3" hidden><span class="ipad-quote" aria-hidden="true">“</span><p>A sua história não terminou no que aconteceu com você.</p></blockquote>
+              </div>
+              <div class="ipad-reading-footer"><span>Jó 1–2</span><span class="ipad-counter" aria-live="polite">Trecho 1 de 3</span></div>
+            </div>
+            <span class="ipad-home" aria-hidden="true"></span>
+          </div>
+          <div class="ipad-controls"><button class="ipad-arrow" type="button" data-ipad-prev aria-label="Trecho anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><div class="ipad-dots"><button type="button" data-ipad-dot="0" aria-label="Mostrar primeiro trecho" aria-current="true"></button><button type="button" data-ipad-dot="1" aria-label="Mostrar segundo trecho"></button><button type="button" data-ipad-dot="2" aria-label="Mostrar terceiro trecho"></button></div><button class="ipad-arrow" type="button" data-ipad-next aria-label="Próximo trecho"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>
+          <p class="ipad-caption">Mensagem em primeira pessoa do devocional,<br>fundamentada na Palavra.</p>
+        </div>
       </div>
     </section>
     <section class="section journey-section" aria-labelledby="journey-title">
@@ -174,11 +193,11 @@
           <a class="text-link" href="#oferta">Conheça a oferta <span aria-hidden="true">↗</span></a>
         </div>
         <ul class="community-benefits">
-          <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Lives diárias</h3><p>Um encontro todos os dias para fortalecer sua caminhada.</p></div></li>
-          <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Leitura com companhia</h3><p>Vamos caminhar pelo devocional juntos.</p></div></li>
-          <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Palavra e direção</h3><p>Explicações bíblicas e conselhos para o dia a dia.</p></div></li>
-          <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Encontros para aprofundar</h3><p>Reuniões sobre os desafios do processo.</p></div></li>
-          <li><span class="benefit-icon" aria-hidden="true">↗</span><div><h3>Um lugar para pedir oração</h3><p>Compartilhe pedidos e ore em comunidade.</p></div></li>
+          <li><span class="benefit-icon" aria-hidden="true"><img src="assets/icons/broadcast.svg" alt="" width="32" height="32" loading="lazy"></span><div><h3>Lives diárias</h3><p>Um encontro todos os dias para fortalecer sua caminhada.</p></div></li>
+          <li><span class="benefit-icon" aria-hidden="true"><img src="assets/icons/book-open-text.svg" alt="" width="32" height="32" loading="lazy"></span><div><h3>Leitura com companhia</h3><p>Vamos caminhar pelo devocional juntos.</p></div></li>
+          <li><span class="benefit-icon" aria-hidden="true"><img src="assets/icons/compass-rose.svg" alt="" width="32" height="32" loading="lazy"></span><div><h3>Palavra e direção</h3><p>Explicações bíblicas e conselhos para o dia a dia.</p></div></li>
+          <li><span class="benefit-icon" aria-hidden="true"><img src="assets/icons/users-four.svg" alt="" width="32" height="32" loading="lazy"></span><div><h3>Encontros para aprofundar</h3><p>Reuniões sobre os desafios do processo.</p></div></li>
+          <li><span class="benefit-icon" aria-hidden="true"><img src="assets/icons/hands-praying.svg" alt="" width="32" height="32" loading="lazy"></span><div><h3>Um lugar para pedir oração</h3><p>Compartilhe pedidos e ore em comunidade.</p></div></li>
         </ul>
         <p class="community-note">A comunidade é um adicional opcional. Você pode comprar apenas o ebook.</p>
       </div>
@@ -213,7 +232,7 @@
       </div>
     </section>
     <section class="author-note" aria-labelledby="author-title">
-      <div class="container author-inner"><div class="author-monogram" aria-hidden="true">fr.</div><div><h2 id="author-title">Uma jornada que nasceu de uma busca real.</h2><p>“Escrevi o Deus de Processos no meu pior momento, quando enfrentei um término, uma quebra financeira e o abandono. Foi nesse lugar que precisei buscar a Deus e entender o que Ele tinha para mim.”</p><span>Felipe Rissi, autor do devocional</span></div></div>
+      <div class="container author-inner"><div class="author-photo"><img class="author-avatar" src="assets/felipe-rissi-perfil.webp" alt="Felipe Rissi, autor do devocional" width="512" height="680" loading="lazy"></div><div><h2 id="author-title">Uma jornada que nasceu de uma busca real.</h2><p>“Escrevi o Deus de Processos no meu pior momento, quando enfrentei um término, uma quebra financeira e o abandono. Foi nesse lugar que precisei buscar a Deus e entender o que Ele tinha para mim.”</p><span>Felipe Rissi, autor do devocional</span></div></div>
     </section>
   </main>
   <dialog class="page-viewer" id="page-viewer" aria-labelledby="page-viewer-title">

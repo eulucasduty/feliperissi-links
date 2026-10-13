@@ -38,12 +38,25 @@ with sync_playwright() as p:
         assert page.locator('.community-benefits').get_by_text('Lives diárias', exact=True).count() == 1
         assert page.locator('.community-identity img').is_visible()
         assert 'WhatsApp' in page.locator('.community-identity').inner_text()
+        assert page.locator('.community-benefits .benefit-icon img').count() == 5
+        assert page.locator('.community-benefits .benefit-icon').all_inner_texts() == ['', '', '', '', '']
+        assert page.locator('.author-avatar').get_attribute('src') == 'assets/felipe-rissi-perfil.webp'
         carousel = page.locator('.page-carousel')
+        assert carousel.locator('[data-book-page]:not([hidden])').count() == 1
         carousel.locator('[data-carousel-next]').click()
-        assert '2 de 2' in carousel.locator('.carousel-counter').inner_text()
-        assert page.locator('[data-reading-slide]').nth(1).is_visible()
+        assert '2 de 4' in carousel.locator('.carousel-counter').inner_text()
+        assert carousel.locator('.book-day').inner_text() == 'Dia 2'
+        carousel.locator('[data-carousel-next]').click()
+        assert '3 de 4' in carousel.locator('.carousel-counter').inner_text()
+        assert carousel.locator('.book-day').inner_text() == 'Dia 3'
+        assert page.locator('[data-book-page]').nth(2).is_visible()
+        assert carousel.locator('[data-book-page]:not([hidden])').count() == 1
+        # Rapid opposite turns must settle on the selected page without stale leaves.
         carousel.locator('[data-carousel-prev]').click()
-        assert page.locator('[data-reading-slide]').first.is_visible()
+        carousel.locator('[data-carousel-prev]').click()
+        page.wait_for_function('!document.querySelector(".book-stage").dataset.turning')
+        assert page.locator('[data-book-page]').first.is_visible()
+        assert page.locator('.turning-sheet').count() == 0
         previews = page.locator('.page-preview')
         previews.first.click()
         viewer = page.locator('#page-viewer')
@@ -60,10 +73,24 @@ with sync_playwright() as p:
         assert not viewer.is_visible()
         assert previews.first.evaluate('(el) => document.activeElement === el')
         previews.first.press('ArrowRight')
-        assert '2 de 2' in carousel.locator('.carousel-counter').inner_text()
-        previews.nth(2).press('ArrowLeft')
-        assert '1 de 2' in carousel.locator('.carousel-counter').inner_text()
+        assert '2 de 4' in carousel.locator('.carousel-counter').inner_text()
+        previews.nth(1).press('ArrowLeft')
+        assert '1 de 4' in carousel.locator('.carousel-counter').inner_text()
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Gallery must not overflow the document'
+        ipad = page.locator('.ipad-carousel')
+        assert ipad.locator('[data-ipad-slide]:not([hidden])').count() == 1
+        ipad.locator('[data-ipad-next]').click()
+        assert '2 de 3' in ipad.locator('.ipad-counter').inner_text()
+        assert ipad.locator('[data-ipad-slide]:not([hidden])').inner_text().strip().startswith('“')
+        ipad.locator('[data-ipad-next]').press('ArrowRight')
+        assert '3 de 3' in ipad.locator('.ipad-counter').inner_text()
+        assert 'A sua história não terminou' in ipad.locator('[data-ipad-slide]:not([hidden])').inner_text()
+        ipad.locator('[data-ipad-dot="0"]').click()
+        page.emulate_media(reduced_motion='reduce')
+        carousel.locator('[data-carousel-next]').click()
+        assert page.locator('.turning-sheet').count() == 0
+        carousel.locator('[data-carousel-prev]').click()
+        assert carousel.locator('.book-day').inner_text() == 'Dia 2'
         page.locator('.journey-list summary').first.click()
         assert page.locator('.journey-list details').first.get_attribute('open') is not None
         page.locator('.journey-list summary').first.press('Enter')

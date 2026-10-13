@@ -9,13 +9,20 @@
   ],
   "backgrounds": [
     {
-      "file": "assets/recomeco-desktop.webp",
-      "source": "background recomeço desktop.png"
+      "file": "assets/hero-historico-desktop.webp",
+      "source": "hero desktop.jpeg"
     },
     {
-      "file": "assets/recomeco-mobile.webp",
-      "source": "background recomeço mobile.png"
+      "file": "assets/hero-historico-mobile.webp",
+      "source": "hero desktop.jpeg",
+      "crop": [
+        992,
+        0,
+        608,
+        900
+      ]
     }
   ],
-  "bookAssetsLedger": "assets/book-media-ledger.json"
+  "bookAssetsLedger": "assets/book-media-ledger.json",
+  "editorialAssetsLedger": "assets/editorial-media-ledger.json"
 }

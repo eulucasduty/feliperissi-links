@@ -1,0 +1,80 @@
+/* Photography, a full-size book leaf, and an iPad reading view. */
+.hero-background img{object-position:72% center}
+.hero::before{background:linear-gradient(180deg,rgba(15,9,4,.49),rgba(15,9,4,.49) 33%,rgba(15,9,4,.28) 57%,rgba(22,15,11,.88) 84%,var(--ink) 100%)}
+.recognition-grid{grid-template-columns:.9fr 1.1fr;gap:85px}
+.book-carousel{width:min(100%,435px);padding:0;margin-inline:auto;border:0;border-radius:0;background:transparent}
+.book-heading{display:flex;gap:20px;align-items:center;justify-content:space-between;margin-bottom:12px}
+.book-day{display:inline-flex;align-items:center;min-height:32px;padding:4px 14px;border:1px solid rgba(245,189,101,.5);color:var(--gold);border-radius:5px;font-size:13px;font-weight:700}
+.book-carousel .carousel-counter{font-size:12px;color:var(--muted)}
+.book-topic{font-family:var(--display);font-size:23px;font-weight:500;line-height:1.4;min-height:34px;margin-bottom:20px}
+.book-stage{position:relative;isolation:isolate;aspect-ratio:456/654;perspective:1800px;background:#bc9762;border:1px solid #705030;border-radius:4px 12px 12px 4px;overflow:hidden;box-shadow:5px 3px 0 #dac49f,8px 5px 0 #96714b,12px 8px 0 #38271a,0 22px 45px rgba(0,0,0,.4);touch-action:pan-y}
+.book-spine{position:absolute;inset:0 auto 0 0;width:14px;z-index:5;pointer-events:none;background:linear-gradient(90deg,rgba(63,38,15,.32),rgba(255,238,201,.25),transparent)}
+.book-page{position:absolute;inset:0}
+.book-carousel .page-preview{width:100%;height:100%;padding:0;border:0;border-radius:0;background:var(--paper);overflow:hidden;box-shadow:none;display:block}
+.book-carousel .page-preview img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain;background:var(--paper)}
+.book-carousel .page-preview:hover{background:#fff7e8}
+.book-carousel .page-preview:focus-visible{outline-offset:-5px;outline-width:4px;outline-color:#835a24}
+.turning-sheet{position:absolute;inset:0;z-index:4;transform-style:preserve-3d;pointer-events:none;will-change:transform,opacity}
+.turning-sheet-front,.turning-sheet-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:var(--paper)}
+.turning-sheet-front img{width:100%;height:100%;object-fit:contain}
+.turning-sheet-front::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(77,43,16,.24),transparent 20%,transparent 75%,rgba(77,43,16,.15));pointer-events:none}
+.turning-sheet-back{transform:rotateY(180deg);background:linear-gradient(90deg,#d6bb8f,#f4e5cb 25%,#f6ead5 75%,#ccb089)}
+.book-footer{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.book-footer .carousel-controls{margin:0;gap:4px}
+.book-footer .carousel-dots button{min-width:24px;width:24px;height:44px}
+.book-footer .carousel-arrow{width:44px;height:44px}
+.carousel-arrow svg,.ipad-arrow svg,.book-enlarge svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.book-enlarge{display:inline-flex;gap:9px;align-items:center;justify-content:center;min-height:44px;border:0;border-bottom:1px solid #8b6538;border-radius:0;padding:7px 0;background:transparent;color:var(--gold);font-family:var(--body);font-size:11px;cursor:zoom-in}
+.book-enlarge:hover{color:#ffdda6;border-color:#ffdda6}
+.book-enlarge svg{width:17px;height:17px}
+.book-carousel .carousel-hint{font-size:11px;margin-top:16px;text-align:left;color:var(--muted)}
+.ipad-carousel{width:min(100%,405px);margin-inline:auto;min-width:0}
+.ipad-frame{position:relative;padding:18px 15px 22px;border:2px solid #61594c;border-radius:29px;background:#181715;box-shadow:inset 0 0 0 2px #2d2b26,1px 2px 0 #a99a85,0 18px 40px rgba(67,45,20,.18)}
+.ipad-camera{position:absolute;width:5px;height:5px;top:7px;left:50%;border-radius:50%;background:#090c0e;box-shadow:0 0 0 1px #42423c}
+.ipad-screen{display:flex;flex-direction:column;width:100%;min-width:0;aspect-ratio:3/4;min-height:455px;padding:26px 25px 20px;background:#fff9ee;border-radius:15px;color:#36261c;overflow:hidden;touch-action:pan-y}
+.ipad-reading-header{display:flex;gap:15px;align-items:center;justify-content:space-between;border-bottom:1px solid #d7c5a6;padding-bottom:13px;font-size:10px;color:#7b6243;font-weight:600}
+.ipad-reading-label{font-size:10px;color:#8b704e;margin-top:15px}
+.ipad-text-stage{position:relative;flex:1;display:flex;align-items:center;min-height:260px;padding-block:15px}
+.ipad-text-slide{width:100%;will-change:transform,opacity}
+.ipad-text-slide p{font-family:var(--display);font-size:25px;line-height:1.55;letter-spacing:-.025em;text-wrap:pretty}
+.ipad-quote{display:block;font-family:var(--display);font-size:52px;line-height:.7;margin-bottom:12px;color:#ac8450}
+.ipad-reading-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:15px;border-top:1px solid #d7c5a6;font-size:10px;color:#8b704e}
+.ipad-home{position:absolute;bottom:9px;left:50%;width:70px;height:3px;transform:translateX(-50%);border-radius:3px;background:#635d51}
+.ipad-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:25px}
+.ipad-arrow,.ipad-dots button{display:grid;place-items:center;min-width:44px;min-height:44px;padding:0;background:transparent;border:0;color:#795124;cursor:pointer}
+.ipad-arrow{border:1px solid #c4ab81;border-radius:50%}
+.ipad-arrow:hover{background:#e8d8bc;color:#36261c;border-color:#795124}
+.ipad-dots{display:flex}
+.ipad-dots button::after{content:"";width:7px;height:7px;border:1px solid #a48350;border-radius:50%}
+.ipad-dots button[aria-current]::after{background:#795124;border-color:#795124}
+.ipad-dots button:hover::after{background:#b69868}
+.ipad-carousel :focus-visible{outline-color:#795124}
+.ipad-caption{font-size:11px;line-height:1.7;text-align:center;color:#806447;max-width:none;margin-top:16px}
+.community-benefits .benefit-icon{width:44px;height:44px;border:1px solid #6e5030;border-radius:12px;background:#38291a;flex-shrink:0}
+.community-benefits .benefit-icon img{width:29px;height:29px}
+.author-inner{align-items:center}
+.author-avatar{flex-shrink:0;width:82px;height:82px;object-fit:cover;object-position:50% 16%;border-radius:50%;border:1px solid #8e683b;background:#000}
+.author-photo{width:82px;height:82px;flex-shrink:0;overflow:hidden;border:1px solid #8e683b;border-radius:50%;background:#000}
+.author-photo .author-avatar{width:100%;height:100%;border:0;border-radius:0;transform:scale(1.5);transform-origin:50% 22%}
+@media(max-width:1000px){
+  .recognition-grid{gap:45px}.book-topic{font-size:20px;min-height:56px}.book-footer{flex-wrap:wrap;gap:6px 14px}.book-carousel{width:min(100%,390px)}
+  .ipad-frame{padding:16px 12px 20px}.ipad-screen{padding:22px 19px 17px;min-height:455px}.ipad-text-slide p{font-size:23px}
+}
+@media(max-width:700px){
+  .hero-background img{object-position:center top}
+  .hero::before{background:linear-gradient(180deg,rgba(18,10,4,.67),rgba(18,10,4,.68) 37%,rgba(18,10,4,.45) 62%,var(--ink) 100%)}
+  .recognition-grid{grid-template-columns:1fr;gap:37px}.book-carousel{width:calc(100% - 10px);max-width:390px;margin-inline:0}
+  .book-topic{font-size:22px;min-height:60px;margin-bottom:16px}.book-heading{margin-bottom:12px}.book-day{font-size:12px}
+  .book-footer{flex-wrap:nowrap;gap:7px}.book-footer .carousel-controls{gap:1px}.book-footer .carousel-dots button{min-width:23px;width:23px}
+  .book-enlarge{font-size:10px;gap:5px}.book-enlarge svg{width:15px;height:15px}.book-footer .carousel-arrow{min-width:40px;width:40px;min-height:44px;height:44px}
+  .book-carousel .carousel-hint{font-size:11px}
+  .ipad-carousel{width:calc(100% - 12px);max-width:380px}
+  .ipad-frame{padding:17px 12px 20px;border-radius:25px}
+  .ipad-screen{min-height:0;padding:23px 20px 17px;border-radius:12px;aspect-ratio:3/4}
+  .ipad-text-slide p{font-size:22px;line-height:1.5}.ipad-text-stage{min-height:0;padding-block:10px}.ipad-reading-header,.ipad-reading-footer{font-size:9px}
+  .ipad-quote{font-size:40px;margin-bottom:10px}
+  .ipad-controls{margin-top:23px}.ipad-caption{font-size:10px}
+  .author-inner{align-items:flex-start;gap:18px}.author-avatar,.author-photo{width:65px;height:65px}
+}
+@media(max-width:360px){.book-footer{flex-wrap:wrap;justify-content:center}.book-enlarge{font-size:11px}.book-topic{font-size:21px}.ipad-screen{padding:16px 14px 12px;min-height:0}.ipad-text-slide p{font-size:18.5px;line-height:1.48}.ipad-reading-header{font-size:8px;padding-bottom:9px}.ipad-reading-label{margin-top:8px}.ipad-reading-footer{padding-top:10px}.ipad-text-stage{padding-block:8px}.ipad-quote{font-size:36px;margin-bottom:8px}.author-avatar,.author-photo{width:56px;height:56px}.author-inner{gap:14px}}
+@media(prefers-reduced-motion:reduce){.turning-sheet{display:none}.ipad-text-slide{will-change:auto}}

@@ -26,10 +26,11 @@ Nenhum layout, estilo ou imagem anterior é reaproveitado.
 [          imagem / espaço para VSL           ]
 [               comprar ebook                 ]
 [       60 dias / 10 jornadas / 179 páginas    ]
-[dor                        páginas em molduras]
+[dor                        livro folheável   ]
 [capa original               o devocional     ]
 [benefícios                  princípios e fé  ]
-[primeiro dia                jornadas         ]
+[primeiro dia                carrossel no iPad ]
+[jornadas                                     ]
 [comunidade / benefícios / adicional opcional  ]
 [oferta ebook                 + comunidade    ]
 [perguntas / autor / rodapé                    ]
@@ -37,12 +38,16 @@ Nenhum layout, estilo ou imagem anterior é reaproveitado.
 
 ## Mídia e revisão
 
-Backgrounds desktop e mobile fornecidos pelo usuário, convertidos para WebP
-sem mudança de composição. Jesus é uma ilustração gerada. A capa e a logo da
+A hero usa a foto de pedra, linho, coroa e lamparina fornecida pelo usuário.
+No mobile, há um enquadramento do lado direito para preservar coroa e lamparina.
+Jesus na capa da VSL é uma ilustração gerada. A capa e a logo da
 comunidade são os arquivos oficiais fornecidos. As páginas 108–109 e 110–111
 receberam upscale local 4x com Real-ESRGAN, sem reescrita do texto.
 A comunidade é no WhatsApp e inclui lives diárias.
 A VSL do YouTube é carregada após clique; seu vídeo vertical é preservado no mobile.
-A fonte Lora substitui a anterior arredondada. O dourado vem das nuvens e da
-coroa da capa original. Jornadas recolhidas reduzem o texto na primeira leitura.
+A fonte Lora substitui a anterior arredondada. O dourado vem da iluminação da
+hero e da coroa da capa original. Jornadas recolhidas reduzem o texto na primeira leitura.
+O livro usa virada em 3D: uma página grande por vez, dia 2 nas duas primeiras
+imagens e dia 3 a partir da terceira. O primeiro dia aparece em um iPad.
+Os ícones da comunidade são Phosphor duotone. O autor usa sua foto real.
 Não há seleção local da comunidade que possa ser confundida com cobrança.

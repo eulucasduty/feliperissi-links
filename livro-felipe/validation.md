@@ -8,8 +8,12 @@
   redução de movimento, safe areas, tipografia e layout responsivo.
 - `app.js`: ✓ configuração vazia tratada, player sem carregamento antecipado,
   foco após interação, títulos de mídia e suporte a legendas em vídeo direto.
-- `gallery.js`: ✓ troca de leitura por botões e teclado, diálogo com foco
-  contido, Escape, retorno do foco, zoom e navegação entre as quatro páginas.
+- `gallery.js`: ✓ livro com virada 3D, troca por botões, teclado e deslize,
+  dia 3 indicado na terceira imagem, sem folhas antigas após cliques rápidos.
+  Diálogo com foco contido, Escape, retorno do foco e zoom preservados.
+  Carrossel independente de 3 trechos no iPad, respeitando movimento reduzido.
+- `editorial.css`: ✓ moldura de iPad sem texto cortado, livro grande,
+  ícones sem emojis, retrato real do autor, hero com enquadramento mobile.
 
 ## Verificação no navegador
 
@@ -19,6 +23,9 @@ checkout verificados. Incorporação da VSL validada com recurso de teste local.
 Revisão visual feita em capturas desktop e mobile. Capa original, logo, 7
 benefícios e lives diárias verificados. Páginas ampliadas em 4x, nos pares 108–109
 e 110–111, com imagens grandes carregadas somente ao abrir o visualizador.
+Os 3 trechos do iPad cabem em 320, 390, 768 e 1440px. Deslize real simulado
+no Chrome mobile muda a página sem abrir a ampliação. Virada inspecionada
+também durante o movimento; modo de movimento reduzido verificado.
 
 ## Pendências externas
 
