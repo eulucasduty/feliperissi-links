@@ -30,11 +30,15 @@ verificados em 1440, 768, 390 e 320px após esses ajustes.
 Chrome: 1440px, 768px, 390px e 320px. Sem rolagem horizontal, imagens quebradas,
 erros JavaScript ou respostas HTTP de erro. Jornadas, FAQ, âncoras e endereço de
 checkout verificados. Incorporação da VSL validada com recurso de teste local.
-Player MP4 nativo validado nos quatro tamanhos com reprodução após clique,
-áudio habilitado, controles, proporção 16:9 e avanço para o final do vídeo.
+Player MP4 validado nos quatro tamanhos com reprodução após clique,
+áudio habilitado, controles próprios, proporção 16:9 e avanço para o final do vídeo.
 Nenhuma requisição ao MP4 ocorre antes do clique. Prévia local com suporte a
 HTTP Range; conversão completa decodificada sem erros e `faststart` verificado.
 Arquivo reduzido de 231.819.945 para 25.168.008 bytes, duração de 150,4 segundos.
+Hero com chamada acima do vídeo e play SVG preto. Interface própria validada
+com clique e teclado: pausa congela o progresso, retomada continua a leitura,
+fim completa a barra e permite assistir novamente. Curva visual desacelerada;
+o atributo acessível mantém a porcentagem real. Controles nativos desativados.
 Revisão visual feita em capturas desktop e mobile. Capa original, logo, 7
 benefícios e lives diárias verificados. Páginas ampliadas em 4x, nos pares 108–109
 e 110–111, com imagens grandes carregadas somente ao abrir o visualizador.

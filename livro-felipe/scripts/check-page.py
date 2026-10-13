@@ -117,13 +117,35 @@ with sync_playwright() as p:
             assert page.locator('iframe').count() == 0
             video = page.locator('.vsl-player video')
             page.wait_for_function('document.querySelector("video")?.currentTime > 0.1')
-            assert video.evaluate('(el) => el.controls && el.playsInline && !el.muted && el.duration > 0')
+            assert video.evaluate('(el) => !el.controls && el.playsInline && !el.muted && el.duration > 0')
             assert video.evaluate('(el) => Math.abs(el.videoWidth / el.videoHeight - 16 / 9) < 0.01')
+            toggle = page.locator('.vsl-toggle')
+            progress = page.locator('.vsl-progress')
+            assert toggle.get_attribute('aria-label') == 'Pausar vídeo'
+            toggle.click()
+            page.wait_for_function('document.querySelector("video").paused')
+            assert toggle.get_attribute('aria-label') == 'Continuar vídeo'
+            paused_progress = progress.evaluate('(el) => el.style.getPropertyValue("--vsl-progress")')
+            page.wait_for_timeout(400)
+            assert progress.evaluate('(el) => el.style.getPropertyValue("--vsl-progress")') == paused_progress
+            assert not page.locator('.vsl-status').is_visible()
+            toggle.press('Space')
+            page.wait_for_function('!document.querySelector("video").paused')
             video.evaluate('(el) => { el.pause(); el.currentTime = el.duration - 5; }')
             page.wait_for_function('(() => { const v = document.querySelector("video"); return !v.seeking && v.currentTime > v.duration - 6; })()')
             assert video.evaluate('(el) => el.currentTime > el.duration - 6')
+            assert 0.98 < float(progress.evaluate('(el) => el.style.getPropertyValue("--vsl-progress")')) < 1
+            assert 95 <= int(progress.get_attribute('aria-valuenow')) < 100
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
             page.locator('.vsl-frame').screenshot(path=str(OUT / f'{label}-native-video.png'))
+            video.evaluate('(el) => { el.currentTime = el.duration - 0.2; }')
+            page.wait_for_function('!document.querySelector("video").seeking')
+            toggle.click()
+            page.wait_for_function('document.querySelector("video").ended')
+            assert progress.evaluate('(el) => el.style.getPropertyValue("--vsl-progress")') == '1'
+            assert toggle.get_attribute('aria-label') == 'Assistir novamente'
+            toggle.press('Enter')
+            page.wait_for_function('!document.querySelector("video").paused && document.querySelector("video").currentTime < 2')
         assert not errors, errors
         assert not bad_responses, bad_responses
         report.append({'viewport': label, 'width': width, 'height': page.evaluate('document.documentElement.scrollHeight'), 'consoleErrors': errors, 'failedResponses': bad_responses})

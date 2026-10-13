@@ -36,9 +36,13 @@ como order bump na plataforma de checkout, não na landing page.
 
 VSL atual: `assets/vsl-deus-de-processos.mp4`, hospedada junto da LP.
 Vídeo fornecido pelo usuário, convertido para MP4 H.264/AAC em 720p e 30 fps,
-com `faststart`. O player nativo abre após o clique, em 16:9 também no mobile;
+com `faststart`. O player abre após o clique, em 16:9 também no mobile;
 o arquivo não é solicitado na abertura da página. As legendas já fazem parte
 da imagem do vídeo fornecido.
+Interface própria com pausar/continuar e barra de progresso sem controles
+nativos. A barra usa uma curva visual que avança rápido no começo e desacelera;
+acompanha o tempo reproduzido, para durante pausas/carregamento e só completa
+ao terminar. O progresso acessível informa a posição real no vídeo.
 Enquanto `vsl.url` estiver vazio, a hero exibe uma
 imagem editorial com link real para o primeiro dia, sem controles de vídeo falsos.
 Para integrar, preencha em `config.js`:

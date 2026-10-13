@@ -1,4 +1,21 @@
 /* Photography, a full-size book leaf, and an iPad reading view. */
+.vsl-intro{font-size:15px;color:var(--white);text-align:center;margin:0 auto 14px}
+.vsl-play{gap:10px;background:rgba(11,8,4,.1);font-size:14px}
+.vsl-start-icon{width:76px;height:76px;fill:#080808;stroke:#f7e7cc;stroke-width:1.5;stroke-linejoin:round;filter:drop-shadow(0 2px 9px rgba(255,240,216,.5))}
+.vsl-play>span{text-shadow:0 2px 8px #000;font-weight:650}
+.vsl-toggle{position:absolute;inset:0;z-index:1;width:100%;height:100%;padding:0;border:0;background:transparent;color:#fff;cursor:pointer;font-family:var(--body);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
+.vsl-toggle-symbol{position:absolute;bottom:16px;left:12px;width:44px;height:44px;display:grid;place-items:center;border-radius:6px;background:rgba(0,0,0,.55)}
+.vsl-toggle-symbol svg{width:24px;height:24px;fill:currentColor}
+.vsl-toggle .vsl-resume-icon,.vsl-toggle .vsl-resume-label{display:none}
+.vsl-toggle.is-paused{background:rgba(0,0,0,.22)}
+.vsl-toggle.is-paused .vsl-toggle-symbol{position:static;width:64px;height:64px;background:rgba(0,0,0,.65);border-radius:8px}
+.vsl-toggle.is-paused .vsl-resume-icon{display:block;width:42px;height:42px}
+.vsl-toggle.is-paused .vsl-pause-icon{display:none}
+.vsl-toggle.is-paused .vsl-resume-label{display:block;font-size:13px;text-shadow:0 2px 8px #000}
+.vsl-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:-5px}
+.vsl-progress{position:absolute;bottom:0;left:0;right:0;height:7px;z-index:2;background:rgba(255,255,255,.2);pointer-events:none}
+.vsl-progress-fill{display:block;width:100%;height:100%;background:var(--gold);transform:scaleX(var(--vsl-progress,0));transform-origin:left;transition:transform .2s linear}
+.vsl-status{position:absolute;top:16px;left:16px;right:16px;z-index:3;padding:8px 12px;background:rgba(0,0,0,.75);color:#fff;font-size:12px;text-align:center;pointer-events:none}
 .hero-description{max-width:62ch}
 .hero-facts>div{flex-direction:column;gap:8px}
 .hero-facts dd{max-width:150px;text-align:center;font-size:12px}
