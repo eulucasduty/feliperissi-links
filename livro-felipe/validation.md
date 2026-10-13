@@ -22,6 +22,11 @@ Títulos, benefícios, jornadas, comunidade, oferta, FAQ, mensagem do autor e
 metadados atualizados. Quebras e larguras ajustadas para os textos novos;
 verificação nos quatro tamanhos abaixo passou após a atualização.
 
+Setas de links e do visualizador substituídas por dez ícones SVG com traço
+arredondado e preenchimento duotone. Autor apresentado em card com retrato
+quadrado e texto à direita, empilhados no celular. Revisão visual e controles
+verificados em 1440, 768, 390 e 320px após esses ajustes.
+
 Chrome: 1440px, 768px, 390px e 320px. Sem rolagem horizontal, imagens quebradas,
 erros JavaScript ou respostas HTTP de erro. Jornadas, FAQ, âncoras e endereço de
 checkout verificados. Incorporação da VSL validada com recurso de teste local.
